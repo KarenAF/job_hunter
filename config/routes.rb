@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get '/' => 'jobs#index'
   get '/jobs' => 'jobs#index'
 
+  get '/jobs/new' => 'jobs#new'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
