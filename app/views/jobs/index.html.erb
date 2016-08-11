@@ -1,0 +1,17 @@
+<h1>Jobs</h1>
+<p><% @jobs.each do |job| %></p>
+<p>Company: <%= job.company %></p>
+<p>Position: <%= job.position %></p>
+<p>Source: <%= job.source %></p>
+<p>Status: <%= job.status %></p>
+<p>Found_date: <%= job.found_date %></p>
+<p>Listing_url: <%= job.listing_url %></p>
+<p>Address: <%= job.address %></p>
+<p>City: <%= job.city %></p>
+<p>State: <%= job.state %></p>
+<p>Zip_code: <%= job.zip_code.upcase if job.zip_code %></p>
+<p>Phone_number: <%= job.phone_number %></p>
+<br>
+<br>
+<br>
+<% end %>
