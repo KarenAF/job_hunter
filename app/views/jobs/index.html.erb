@@ -1,17 +1,80 @@
-<h1>Jobs</h1>
-<p><% @jobs.each do |job| %></p>
+<h1>Job Listings</h1>
+
+<div>
+<p> -----------------------------------------------------------------</p>
+<h2>Jobs I haven't applied to yet: </h2>
+<p><% @jobs1.each do |job| %></p>
 <p>Company: <%= job.company %></p>
 <p>Position: <%= job.position %></p>
 <p>Source: <%= job.source %></p>
-<p>Status: <%= job.status %></p>
 <p>Found_date: <%= job.found_date %></p>
-<p>Listing_url: <%= job.listing_url %></p>
-<p>Address: <%= job.address %></p>
 <p>City: <%= job.city %></p>
-<p>State: <%= job.state %></p>
-<p>Zip_code: <%= job.zip_code.upcase if job.zip_code %></p>
-<p>Phone_number: <%= job.phone_number %></p>
-<br>
+<p> <a href="/jobs/<%= job.id %>">See listing details </a> </p>
 <br>
 <br>
 <% end %>
+ </div>
+<p> -----------------------------------------------------------------</p>
+
+<div>
+<h2>Jobs I am applying to: </h2>
+<p><% @jobs2.each do |job| %></p>
+<p>Company: <%= job.company %></p>
+<p>Position: <%= job.position %></p>
+<p>Source: <%= job.source %></p>
+<p>Found_date: <%= job.found_date %></p>
+<p>City: <%= job.city %></p>
+<p> <a href="/jobs/<%= job.id %>">See listing details </a> </p>
+<br>
+<br>
+<% end %>
+</div>
+<p> -----------------------------------------------------------------</p>
+
+<div>
+<h2>Jobs I applied to: </h2>
+<p><% @jobs3.each do |job| %></p>
+<p>Company: <%= job.company %></p>
+<p>Position: <%= job.position %></p>
+<p>Source: <%= job.source %></p>
+<p>Found_date: <%= job.found_date %></p>
+<p>City: <%= job.city %></p>
+<p> <a href="/jobs/<%= job.id %>">See listing details </a> </p>
+<br>
+<br>
+<% end %>
+</div>
+<p> -----------------------------------------------------------------</p>
+
+<div>
+<h2>Jobs I got an interview with: </h2>
+<p><% @jobs4.each do |job| %></p>
+<p>Company: <%= job.company %></p>
+<p>Position: <%= job.position %></p>
+<p>Source: <%= job.source %></p>
+<p>Found_date: <%= job.found_date %></p>
+<p>City: <%= job.city %></p>
+<p> <a href="/jobs/<%= job.id %>">See listing details </a> </p>
+<br>
+<br>
+<% end %>
+</div>
+<p> -----------------------------------------------------------------</p>
+
+<div>
+<h2>Jobs I interviewed with: </h2>
+<p><% @jobs5.each do |job| %></p>
+<p>Company: <%= job.company %></p>
+<p>Position: <%= job.position %></p>
+<p>Source: <%= job.source %></p>
+<p>Found_date: <%= job.found_date %></p>
+<p>City: <%= job.city %></p>
+<p> <a href="/jobs/<%= job.id %>">See listing details </a> </p>
+<br>
+<br>
+<% end %>
+</div>
+<p> -----------------------------------------------------------------</p>
+
+
+

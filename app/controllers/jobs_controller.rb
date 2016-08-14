@@ -1,6 +1,10 @@
 class JobsController < ApplicationController
   def index
-    @jobs = Job.all
+    @jobs1 = Job.where(status: "not_yet_applied")
+    @jobs2 = Job.where(status: "applying_to")
+    @jobs3 = Job.where(status: "applied_to")
+    @jobs4 = Job.where(status: "interview_set_up")
+    @jobs5 = Job.where(status: "interviewed_with")
     render 'index.html.erb'
   end
 
@@ -9,10 +13,15 @@ class JobsController < ApplicationController
     render 'new.html.erb'
   end
 
-  def create
-    @job = Job.new(
-      name:
+  def show
+    @job = Job.find_by(id: params['id'])
+    render 'show.html.erb'
+  end
 
-    )
+  # def create
+  #   @job = Job.new(
+  #     name:
+
+  #   )
 
 end

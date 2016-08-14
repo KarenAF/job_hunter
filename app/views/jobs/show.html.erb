@@ -1,0 +1,13 @@
+<h3> Job listing details: </h3>
+<p>Company: <%= @job.company %></p>
+<p>Position: <%= @job.position %></p>
+<p>Source: <%= @job.source %></p>
+<p>Found_date: <%= @job.found_date %></p>
+<p>Listing_url: <%= @job.listing_url %></p>
+<p>Address: <%= @job.address %></p>
+<p>City: <%= @job.city %></p>
+<p>State: <%= @job.state %></p>
+<p>Zip_code: <%= @job.zip_code.upcase if @job.zip_code %></p>
+<p>Phone_number: <%= @job.phone_number %></p>
+<p>Status: <%= @job.status %></p>
+<h5> <a href="/jobs"> Back to all jobs </a></h5>
