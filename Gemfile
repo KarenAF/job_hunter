@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'figaro'
+# 8/17/16 for API key storage
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
