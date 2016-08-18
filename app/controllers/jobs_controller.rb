@@ -20,8 +20,8 @@ class JobsController < ApplicationController
 
   # def create
   #   @job = Job.new(
-  #     name:
-
+  #     user_id: current
   #   )
+
 
 end
