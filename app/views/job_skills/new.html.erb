@@ -1,24 +1,8 @@
-<h1>Add skills to this job listing</h1>
-<%= form_tag '/job_skills', method: :post do  %>
+<h1>Add a skill to this job listing</h1>
+<%= form_tag '/job_skills/#{@job.id}', method: :post do  %>
   <div>
-    <%= label_tag :first_name %>
-    <%= text_field_tag :first_name %>
-  </div>
-  <div>
-    <%= label_tag :last_name %>
-    <%= text_field_tag :last_name %>
-  </div>  
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-  </div>
-  <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <div>
-    <%= label_tag :password_confirmation %>
-    <%= password_field_tag :password_confirmation %>
+    <%= label_tag :skill_id %>
+    <%= text_field_tag :skill_id %>
   </div>
   <%= submit_tag "Submit" %>
 <% end %>
