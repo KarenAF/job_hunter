@@ -16,6 +16,7 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find_by(id: params['id'])
+    @skills = @job.skills
     render 'show.html.erb'
   end
 
