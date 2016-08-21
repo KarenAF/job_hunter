@@ -20,12 +20,12 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(
-      user_id: 1,
+      user_id: current_user.id,
       company: params['company'],
       position: params['position'],
       source: params['source'],
       status: params['status'],
-      found_date: params['found_date'] || DateTime.now,
+      found_date: params['found_date'],
       listing_url: params['listing_url'],
       job_type: params['job_type'],
       address: params['address'],
@@ -43,6 +43,9 @@ class JobsController < ApplicationController
       notes: params['notes']
     )
     @job.save
+    puts "*********"
+    Rails.logger.info @job.attributes
+    puts "*********"
     flash[:success] = "job listing successfully saved"
     redirect_to '/jobs'
   end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/index'
+
   get '/' => 'jobs#index'
   get '/jobs' => 'jobs#index'
   get '/jobs/new' => 'jobs#new'
