@@ -18,10 +18,33 @@ class JobsController < ApplicationController
     render 'show.html.erb'
   end
 
-  # def create
-  #   @job = Job.new(
-  #     user_id: current
-  #   )
-
+  def create
+    @job = Job.new(
+      user_id: 1,
+      company: params['company'],
+      position: params['position'],
+      source: params['source'],
+      status: params['status'],
+      found_date: params['found_date'] || DateTime.now,
+      listing_url: params['listing_url'],
+      job_type: params['job_type'],
+      address: params['address'],
+      city: params['city'],
+      state: params['state'],
+      zip_code: params['zip_code'],
+      phone_number: params['phone_number'],
+      company_website: params['company_website'],
+      hourly_wage: params['hourly_wage'],
+      salary: params['salary'],
+      applied_date: params['applied_date'],
+      interview_date: params['interview_date'],
+      offer_date: params['offer_date'],
+      rating: params['rating'],
+      notes: params['notes']
+    )
+    @job.save
+    flash[:success] = "job listing successfully saved"
+    redirect_to '/jobs'
+  end
 
 end

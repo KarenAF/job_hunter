@@ -41,6 +41,42 @@
     <%= text_field_tag :state, @job.state, class: "form-control"  %>
   </div>
   <div class = "form-group">
+    <%= label_tag :zip_code  %>
+    <%= text_field_tag :zip_code, @job.zip_code, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :phone_number  %>
+    <%= text_field_tag :phone_number, @job.phone_number, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :company_website  %>
+    <%= text_field_tag :company_website, @job.company_website, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :hourly_wage  %>
+    <%= text_field_tag :hourly_wage, @job.hourly_wage, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :salary  %>
+    <%= text_field_tag :salary, @job.salary, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :interview_date  %>
+    <%= text_field_tag :interview_date, @job.interview_date, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :offer_date  %>
+    <%= text_field_tag :offer_date, @job.offer_date, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :rating  %>
+    <%= text_field_tag :rating, @job.rating, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :notes  %>
+    <%= text_field_tag :notes, @job.notes, class: "form-control"  %>
+  </div>                  
+  <div class = "form-group">
     <%= submit_tag "Add job" %>
   </div>
   <a href = "/jobs/"><p> cancel </p></a>
