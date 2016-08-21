@@ -17,25 +17,26 @@ user = User.create(
   address: "34 West Way, Honolulu, HI, 39575",
   prospective_address: "Chicago, IL"
 )
-job = Job.create(
-  user_id: user.id,
-  company: Faker::Company.name,
-  position: Faker::Company.profession,
-  source: "Monster",
-  status: "not_yet_applied",
-  found_date: DateTime.now,
-  listing_url: Faker::Internet.url('monster.com'),
-  address: Faker::Address.street_address,
-  city: Faker::Address.city,
-  state: Faker::Address.state_abbr,
-  zip_code: Faker::Address.zip_code,
-  phone_number: Faker::PhoneNumber.phone_number,
-  company_website: Faker::Internet.url('company.com'),
-  salary: 90000, 
-  rating: rand(1..5),
-  notes: Faker::Lorem.paragraph
-)
-
+5.times do 
+  job = Job.create(
+    user_id: user.id,
+    company: Faker::Company.name,
+    position: Faker::Company.profession,
+    source: "Monster",
+    status: "not_yet_applied",
+    found_date: DateTime.now,
+    listing_url: Faker::Internet.url('monster.com'),
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state_abbr,
+    zip_code: Faker::Address.zip_code,
+    phone_number: Faker::PhoneNumber.phone_number,
+    company_website: Faker::Internet.url('company.com'),
+    salary: 90000, 
+    rating: rand(1..5),
+    notes: Faker::Lorem.paragraph
+  )
+end
 
 user = User.create(
   first_name: "Alex",
@@ -82,7 +83,7 @@ names.each do |name|
 
 # JOBS SEED ######################################
 
-  3.times do
+  6.times do
     job = Job.create(
       user_id: user.id,
       company: Faker::Company.name,
@@ -124,6 +125,7 @@ jobs.each do |job|
     JobSkill.create(
       skill_id: skill.id,
       job_id: job.id
+      user_id: 1
     )
   end
 end

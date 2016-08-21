@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   post 'users' => 'users#create'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'  
+  get '/logout' => 'sessions#destroy'
+
+  get 'jobs/:job_id/job_skills/new' => 'job_skills#new'  
+  post 'jobs/:job_id' => 'job_skills#create'  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
