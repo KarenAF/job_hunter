@@ -5,6 +5,7 @@ class JobsController < ApplicationController
     @jobs3 = Job.where(status: "applied_to")
     @jobs4 = Job.where(status: "interview_set_up")
     @jobs5 = Job.where(status: "interviewed_with")
+    @jobs6 = Job.where(status: "job_offered")
     render 'index.html.erb'
   end
 

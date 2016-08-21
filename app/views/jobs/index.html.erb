@@ -77,5 +77,20 @@
 </div>
 <p> -----------------------------------------------------------------</p>
 
+<div>
+<h2>Jobs I've received offers from: </h2>
+<p><% @jobs6.each do |job| %></p>
+<p>Company: <%= job.company %></p>
+<p>Position: <%= job.position %></p>
+<p>Source: <%= job.source %></p>
+<p>Found_date: <%= job.found_date %></p>
+<p>City: <%= job.city %></p>
+<p> <a href="/jobs/<%= job.id %>">See listing details </a> </p>
+<br>
+<br>
+<% end %>
+</div>
+<p> -----------------------------------------------------------------</p>
+
 
 
