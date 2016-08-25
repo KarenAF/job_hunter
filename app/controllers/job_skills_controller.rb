@@ -1,6 +1,8 @@
 class JobSkillsController < ApplicationController
   def new
     @job = Job.find_by(id: params['job_id'])
+    @skills = Skill.all
+    @skills_for_this_job = @job.skills.sort
     render 'new.html.erb'
   end
 
