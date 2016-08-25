@@ -1,5 +1,6 @@
 class JobSkillsController < ApplicationController
   def new
+    @job = Job.find_by(id: params['job_id'])
     render 'new.html.erb'
   end
 
@@ -8,8 +9,8 @@ class JobSkillsController < ApplicationController
     jobskill = JobSkill.create(
       user_id: current_user.id,
       skill_id: params[:skill_id],
-      job_id: @job.id
+      job_id: params['job_id']
     )
-    redirect_to 'jobs/#{@job.id}'
+    redirect_to "/jobs/#{@job.id}"
   end
 end
