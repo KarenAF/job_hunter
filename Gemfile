@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'seed_dump'
+
 gem 'figaro'
 # 8/17/16 for API key storage
 
