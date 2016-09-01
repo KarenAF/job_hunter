@@ -293,15 +293,13 @@ end
 
 jobs = Job.all 
 skills = Skill.all
-user = User.first
-skill = Skill.first
 
 jobs.each do |job|
   # skills.each do |skill|
     JobSkill.create(
-      skill_id: skill.id,
-      job_id: job.id,
-      user_id: user.id
+      skill_id: 1
+      job_id: job.id
+      user_id: 1
     )
   # end
 end
