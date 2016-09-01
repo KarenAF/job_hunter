@@ -1,5 +1,6 @@
 # 8/3/16 Wednesday
 # 8/7/16 Sunday
+# 8/31/16 Wednesday
 
 Job.destroy_all
 JobSkill.destroy_all
@@ -38,6 +39,111 @@ user = User.create(
   )
 end
 
+5.times do 
+  job = Job.create(
+    user_id: user.id,
+    company: Faker::Company.name,
+    position: Faker::Company.profession,
+    source: "Monster",
+    status: "applying_to",
+    found_date: DateTime.now,
+    listing_url: Faker::Internet.url('monster.com'),
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state_abbr,
+    zip_code: Faker::Address.zip_code,
+    phone_number: Faker::PhoneNumber.phone_number,
+    company_website: Faker::Internet.url('company.com'),
+    salary: 90000, 
+    rating: rand(1..5),
+    notes: Faker::Lorem.paragraph
+  )
+end
+
+5.times do 
+  job = Job.create(
+    user_id: user.id,
+    company: Faker::Company.name,
+    position: Faker::Company.profession,
+    source: "Monster",
+    status: "applied_to",
+    found_date: DateTime.now,
+    listing_url: Faker::Internet.url('monster.com'),
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state_abbr,
+    zip_code: Faker::Address.zip_code,
+    phone_number: Faker::PhoneNumber.phone_number,
+    company_website: Faker::Internet.url('company.com'),
+    salary: 90000, 
+    rating: rand(1..5),
+    notes: Faker::Lorem.paragraph
+  )
+end
+
+5.times do 
+  job = Job.create(
+    user_id: user.id,
+    company: Faker::Company.name,
+    position: Faker::Company.profession,
+    source: "Monster",
+    status: "interview_set_up",
+    found_date: DateTime.now,
+    listing_url: Faker::Internet.url('monster.com'),
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state_abbr,
+    zip_code: Faker::Address.zip_code,
+    phone_number: Faker::PhoneNumber.phone_number,
+    company_website: Faker::Internet.url('company.com'),
+    salary: 90000, 
+    rating: rand(1..5),
+    notes: Faker::Lorem.paragraph
+  )
+end
+
+5.times do 
+  job = Job.create(
+    user_id: user.id,
+    company: Faker::Company.name,
+    position: Faker::Company.profession,
+    source: "Monster",
+    status: "interviewed_with",
+    found_date: DateTime.now,
+    listing_url: Faker::Internet.url('monster.com'),
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state_abbr,
+    zip_code: Faker::Address.zip_code,
+    phone_number: Faker::PhoneNumber.phone_number,
+    company_website: Faker::Internet.url('company.com'),
+    salary: 90000, 
+    rating: rand(1..5),
+    notes: Faker::Lorem.paragraph
+  )
+end
+
+5.times do 
+  job = Job.create(
+    user_id: user.id,
+    company: Faker::Company.name,
+    position: Faker::Company.profession,
+    source: "Monster",
+    status: "job_offered",
+    found_date: DateTime.now,
+    listing_url: Faker::Internet.url('monster.com'),
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state_abbr,
+    zip_code: Faker::Address.zip_code,
+    phone_number: Faker::PhoneNumber.phone_number,
+    company_website: Faker::Internet.url('company.com'),
+    salary: 90000, 
+    rating: rand(1..5),
+    notes: Faker::Lorem.paragraph
+  )
+end
+
 user = User.create(
   first_name: "Alex",
   last_name: "Liu",
@@ -47,62 +153,130 @@ user = User.create(
   address: "78 South Way, Burly, TN, 86213",
   prospective_address: "Chicago, IL"
 )
-job = Job.create(
-  user_id: user.id,
-  company: Faker::Company.name,
-  position: Faker::Company.profession,
-  source: "Monster",
-  status: "not_yet_applied",
-  found_date: DateTime.now,
-  listing_url: Faker::Internet.url('monster.com'),
-  address: Faker::Address.street_address,
-  city: Faker::Address.city,
-  state: Faker::Address.state_abbr,
-  zip_code: Faker::Address.zip_code,
-  phone_number: Faker::PhoneNumber.phone_number,
-  company_website: Faker::Internet.url('company.com'),
-  salary: 90000, 
-  rating: rand(1..5),
-  notes: Faker::Lorem.paragraph
-)
-
-# USERS/3 JOBS SEED ######################################
-
-names = ['Jane', 'John']
-
-names.each do |name|
-  user = User.create(
-    email: "#{name}@gmail.com".downcase,
-    first_name: name,
-    last_name: "Doe",
-    password: "password",
+5.times do 
+  job = Job.create(
+    user_id: user.id,
+    company: Faker::Company.name,
+    position: Faker::Company.profession,
+    source: "Monster",
+    status: "not_yet_applied",
+    found_date: DateTime.now,
+    listing_url: Faker::Internet.url('monster.com'),
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state_abbr,
+    zip_code: Faker::Address.zip_code,
     phone_number: Faker::PhoneNumber.phone_number,
-    address: "#{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.state_abbr}, #{Faker::Address.zip_code}",
-    prospective_address: "#{Faker::Address.city}, #{Faker::Address.state_abbr}"
+    company_website: Faker::Internet.url('company.com'),
+    salary: 90000, 
+    rating: rand(1..5),
+    notes: Faker::Lorem.paragraph
   )
+end
 
-# JOBS SEED ######################################
+5.times do 
+  job = Job.create(
+    user_id: user.id,
+    company: Faker::Company.name,
+    position: Faker::Company.profession,
+    source: "Monster",
+    status: "applying_to",
+    found_date: DateTime.now,
+    listing_url: Faker::Internet.url('monster.com'),
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state_abbr,
+    zip_code: Faker::Address.zip_code,
+    phone_number: Faker::PhoneNumber.phone_number,
+    company_website: Faker::Internet.url('company.com'),
+    salary: 90000, 
+    rating: rand(1..5),
+    notes: Faker::Lorem.paragraph
+  )
+end
 
-  6.times do
-    job = Job.create(
-      user_id: user.id,
-      company: Faker::Company.name,
-      position: Faker::Company.profession,
-      source: "Monster",
-      status: "not_yet_applied",
-      found_date: DateTime.now,
-      listing_url: Faker::Internet.url('monster.com'),
-      address: Faker::Address.street_address,
-      city: Faker::Address.city,
-      state: Faker::Address.state_abbr,
-      zip_code: Faker::Address.zip_code,
-      phone_number: Faker::PhoneNumber.phone_number,
-      company_website: Faker::Internet.url('company.com'),
-      salary: 90000, 
-      rating: rand(1..5),
-      notes: Faker::Lorem.paragraph
-    )
-  end
+5.times do 
+  job = Job.create(
+    user_id: user.id,
+    company: Faker::Company.name,
+    position: Faker::Company.profession,
+    source: "Monster",
+    status: "applied_to",
+    found_date: DateTime.now,
+    listing_url: Faker::Internet.url('monster.com'),
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state_abbr,
+    zip_code: Faker::Address.zip_code,
+    phone_number: Faker::PhoneNumber.phone_number,
+    company_website: Faker::Internet.url('company.com'),
+    salary: 90000, 
+    rating: rand(1..5),
+    notes: Faker::Lorem.paragraph
+  )
+end
+
+5.times do 
+  job = Job.create(
+    user_id: user.id,
+    company: Faker::Company.name,
+    position: Faker::Company.profession,
+    source: "Monster",
+    status: "interview_set_up",
+    found_date: DateTime.now,
+    listing_url: Faker::Internet.url('monster.com'),
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state_abbr,
+    zip_code: Faker::Address.zip_code,
+    phone_number: Faker::PhoneNumber.phone_number,
+    company_website: Faker::Internet.url('company.com'),
+    salary: 90000, 
+    rating: rand(1..5),
+    notes: Faker::Lorem.paragraph
+  )
+end
+
+5.times do 
+  job = Job.create(
+    user_id: user.id,
+    company: Faker::Company.name,
+    position: Faker::Company.profession,
+    source: "Monster",
+    status: "interviewed_with",
+    found_date: DateTime.now,
+    listing_url: Faker::Internet.url('monster.com'),
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state_abbr,
+    zip_code: Faker::Address.zip_code,
+    phone_number: Faker::PhoneNumber.phone_number,
+    company_website: Faker::Internet.url('company.com'),
+    salary: 90000, 
+    rating: rand(1..5),
+    notes: Faker::Lorem.paragraph
+  )
+end
+
+5.times do 
+  job = Job.create(
+    user_id: user.id,
+    company: Faker::Company.name,
+    position: Faker::Company.profession,
+    source: "Monster",
+    status: "job_offered",
+    found_date: DateTime.now,
+    listing_url: Faker::Internet.url('monster.com'),
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state_abbr,
+    zip_code: Faker::Address.zip_code,
+    phone_number: Faker::PhoneNumber.phone_number,
+    company_website: Faker::Internet.url('company.com'),
+    salary: 90000, 
+    rating: rand(1..5),
+    notes: Faker::Lorem.paragraph
+  )
 end
 
 # SKILLS SEED ######################################
@@ -132,13 +306,14 @@ end
 
 # NETWORKINGS SEED ######################################
 
-names = ["Tommy", "Sue", "Bob", "Jim"]
 users = User.all
 
-names.each do |name|
-  users.each do |user|
+users.each do |user|
+  5.times do
+    name = Faker::Name.first_name
     Networking.create(
       first_name: name,
+      last_name: Faker::Name.last_name,
       user_id: user.id,
       date_contacted: DateTime.now,
       email: "#{name}@gmail.com",
@@ -150,6 +325,7 @@ names.each do |name|
     )
   end
 end
+
 
 
 puts 'Done!'
