@@ -5,6 +5,7 @@ class NetworkingsController < ApplicationController
 
   def new
     @networking = Networking.new
+    @connections = current_user.networkings
     render 'new.html.erb'
   end
 end

@@ -1,27 +1,49 @@
 <h1>Add a networking connection </h1>
-<p> Existing skills: 
+<p> Existing skills: </p>
+<% @connections.each do |connection| %> 
+<p> <%= connection.first_name %> <%= connection.last_name %> </p>
+<% end %>
 <br>
-<% @skills_for_this_job.each do |skill| %>
-  <%= skill.name %>
-  <br> 
-  <% end %>
 </p>
-<%= form_tag "/jobs/#{@job.id}/job_skills", method: :post do  %>
+<%= form_tag "/networkings", method: :post do  %>
   <div>
-    <%= label_tag :skill_id, "Skill ID" %>
-    <%= text_field_tag :skill_id %>
+    <%= label_tag :first_name, "first name" %>
+    <%= text_field_tag :first_name %>
   </div>
+  <div>
+    <%= label_tag :last_name, "last name" %>
+    <%= text_field_tag :last_name %>
+  </div>
+  <div>
+    <%= label_tag :date_contacted, "Date contacted"  %>
+    <%= text_field_tag :date_contacted, "2016-09-01 01:54:57.657137" %>
+  </div>
+  <div>
+    <%= label_tag :email, "email address" %>
+    <%= text_field_tag :email %>
+  </div>
+  <div>
+    <%= label_tag :job_id, "Job id" %>
+    <%= text_field_tag :job_id %>
+  </div>  
+  <div>
+    <%= label_tag :emailed, "Emailed? T/F" %>
+    <%= text_field_tag :emailed %>
+  </div>
+  <div>
+    <%= label_tag :phoned, "Called? T/F" %>
+    <%= text_field_tag :phoned %>
+  </div>
+  <div>
+    <%= label_tag :letter_sent, "Sent letter? T/F" %>
+    <%= text_field_tag :letter_sent %>
+  </div>
+  <div>
+    <%= label_tag :notes  %>
+    <%= text_field_tag :notes %>
+  </div>              
   <%= submit_tag "Submit" %>
 <% end %>
 
-<div>  
-<p>
-<% @skills.each do |skill| %>
-<%= skill.id %>. 
-<%= skill.name %>
-<br>
-<% end %>
-</p>
-</div>
 
 <a href = "/jobs/"><p> cancel </p></a>
