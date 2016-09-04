@@ -19,10 +19,17 @@ class NetworkingsController < ApplicationController
       job_id: params['job_id'],
       emailed: params['emailed'],
       phoned: params['phoned'],
-      letter_sent: params['letter_sent']
+      letter_sent: params['letter_sent'],
+      notes: params['notes']
     )
     @networking.save
     flash[:success] = "networking connection successfully saved"
     redirect_to '/networkings'  
-  end  
+  end 
+
+  def show
+    @networking = Networking.find_by(id: params[:id])
+    render 'show.html.erb'
+  end
+
 end

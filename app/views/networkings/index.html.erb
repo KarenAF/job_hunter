@@ -1,8 +1,11 @@
 <h1>Networking Connections</h1>
 
 <% @networkings.each do |networking|%>
-<p> <%= networking.first_name %> <%= networking.last_name %> </p>
+<p> <a href="/networkings/<%=networking.id%>"> <%= networking.first_name %> <%= networking.last_name %> </a></p>
 
 <% end %>
 
 <h5> <a href="/networkings/new"> New networking connection </a></h5>
+
+<a href = "/jobs/"><p> cancel </p></a>
+

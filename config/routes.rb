@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   get '/' => 'networkings#index'
   get '/networkings' => 'networkings#index'
-  get '/networkings/new' => 'networkings#new'  
+  get '/networkings/new' => 'networkings#new'
+  get '/networkings/:id' => 'networkings#show'  
   post '/networkings' => 'networkings#create'  
 
   get '/signup' => 'users#new'

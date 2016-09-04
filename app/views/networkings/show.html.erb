@@ -1,0 +1,16 @@
+<h3> Networking connection details: </h3>
+<h4><%= @networking.first_name %> <%= @networking.last_name %></h4>
+<h5>Date first contacted: </h5><p> <%= @networking.date_contacted %></p>
+<h5>Email address:</h5><p> <%= @networking.email%></p>
+<h5>Job ID: </h5><p><%= @networking.job_id %></p>
+<h5>Emailed?:</h5><p> <%= @networking.emailed %></p>
+<h5>Phoned?: </h5><p><%= @networking.phoned%></p>
+<h5>Notes:</h5><p> <%= @networking.notes %></p>
+
+
+<p><%= link_to "Add networking connection", "/networkings/#{@networking.id}/networking_skills/new", class: "btn btn-success"%></p>
+
+
+<h5> <a href="/networkings"> Back to all networkings </a></h5>
+
+<h5> <a href="/jobs"> Back to all jobs </a></h5>
