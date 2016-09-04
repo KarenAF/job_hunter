@@ -1,5 +1,5 @@
 <h1>Add a networking connection </h1>
-<p> Existing connections: </p>
+<h3> Existing connections: </h3>
 <% @connections.each do |connection| %> 
 <p> <%= connection.first_name %> <%= connection.last_name %> </p>
 <% end %>
@@ -7,11 +7,11 @@
 </p>
 <%= form_tag "/networkings", method: :post do  %>
   <div>
-    <%= label_tag :first_name, "first name" %>
+    <%= label_tag :first_name, "First name" %>
     <%= text_field_tag :first_name %>
   </div>
   <div>
-    <%= label_tag :last_name, "last name" %>
+    <%= label_tag :last_name, "Last name" %>
     <%= text_field_tag :last_name %>
   </div>
   <div>
@@ -19,7 +19,7 @@
     <%= text_field_tag :date_contacted, "2016-09-01 01:54:57.657137" %>
   </div>
   <div>
-    <%= label_tag :email, "email address" %>
+    <%= label_tag :email, "Email address" %>
     <%= text_field_tag :email %>
   </div>
   <div>

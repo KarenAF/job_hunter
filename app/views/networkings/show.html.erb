@@ -5,10 +5,11 @@
 <h5>Job: <%= @job.company %></h5>
 <h5>Emailed? <%= @networking.emailed %></h5>
 <h5>Phoned? <%= @networking.phoned%></h5>
+<h5>Letter sent? <%= @networking.letter_sent%></h5>
 <h5>Notes: <%= @networking.notes %></h5>
 
 
-<p><%= link_to "Add networking connection", "/networkings/#{@networking.id}/networking_skills/new", class: "btn btn-success"%></p>
+<p><%= link_to "Add networking connection", "/networkings/new", class: "btn btn-success"%></p>
 
 
 <h5> <a href="/networkings"> Back to all networkings </a></h5>
