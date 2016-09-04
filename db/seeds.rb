@@ -1,6 +1,7 @@
 # 8/3/16 Wednesday
 # 8/7/16 Sunday
 # 8/31/16 Wednesday
+# 9/4/16 Sunday
 
 Job.destroy_all
 JobSkill.destroy_all
@@ -308,15 +309,15 @@ end
 
 # NETWORKINGS SEED ######################################
 
-users = User.all
+jobs = Job.all
 
-users.each do |user|
+jobs.each do |job|
   5.times do
     name = Faker::Name.first_name
     Networking.create(
       first_name: name,
       last_name: Faker::Name.last_name,
-      user_id: user.id,
+      user_id: job.user.id,
       date_contacted: DateTime.now,
       email: "#{name}@gmail.com",
       job_id: rand(1..4),

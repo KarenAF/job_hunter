@@ -29,6 +29,7 @@ class NetworkingsController < ApplicationController
 
   def show
     @networking = Networking.find_by(id: params[:id])
+    @job = @networking.job
     render 'show.html.erb'
   end
 
