@@ -53,7 +53,7 @@ class NetworkingsController < ApplicationController
       notes: params['notes']
     )
     @networking.save
-    flash[:success] = "networking connection successfully saved"
+    flash[:success] = "networking connection successfully updated"
     redirect_to "/networkings/#{@networking.id}"     
   end
 end

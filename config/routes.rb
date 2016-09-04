@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   get '/' => 'jobs#index'
   get '/jobs' => 'jobs#index'
   get '/jobs/new' => 'jobs#new'
-  get '/jobs/:id' => 'jobs#show'
   post '/jobs' => 'jobs#create'
+  get '/jobs/:id' => 'jobs#show'
+  get '/jobs/:id/edit' => 'jobs#edit'
+  patch '/jobs/:id' => 'jobs#update'
 
   get '/' => 'networkings#index'
   get '/networkings' => 'networkings#index'

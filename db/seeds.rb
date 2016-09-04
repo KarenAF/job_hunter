@@ -19,7 +19,7 @@ user = User.create(
   address: "34 West Way, Honolulu, HI, 39575",
   prospective_address: "Chicago, IL"
 )
-5.times do 
+3.times do 
   job = Job.create(
     user_id: user.id,
     company: Faker::Company.name,
@@ -40,7 +40,7 @@ user = User.create(
   )
 end
 
-5.times do 
+3.times do 
   job = Job.create(
     user_id: user.id,
     company: Faker::Company.name,
@@ -61,7 +61,7 @@ end
   )
 end
 
-5.times do 
+3.times do 
   job = Job.create(
     user_id: user.id,
     company: Faker::Company.name,
@@ -82,7 +82,7 @@ end
   )
 end
 
-5.times do 
+3.times do 
   job = Job.create(
     user_id: user.id,
     company: Faker::Company.name,
@@ -103,7 +103,7 @@ end
   )
 end
 
-5.times do 
+3.times do 
   job = Job.create(
     user_id: user.id,
     company: Faker::Company.name,
@@ -124,7 +124,7 @@ end
   )
 end
 
-5.times do 
+3.times do 
   job = Job.create(
     user_id: user.id,
     company: Faker::Company.name,
@@ -154,7 +154,7 @@ user = User.create(
   address: "78 South Way, Burly, TN, 86213",
   prospective_address: "Chicago, IL"
 )
-5.times do 
+3.times do 
   job = Job.create(
     user_id: user.id,
     company: Faker::Company.name,
@@ -175,7 +175,7 @@ user = User.create(
   )
 end
 
-5.times do 
+3.times do 
   job = Job.create(
     user_id: user.id,
     company: Faker::Company.name,
@@ -196,7 +196,7 @@ end
   )
 end
 
-5.times do 
+3.times do 
   job = Job.create(
     user_id: user.id,
     company: Faker::Company.name,
@@ -217,7 +217,7 @@ end
   )
 end
 
-5.times do 
+3.times do 
   job = Job.create(
     user_id: user.id,
     company: Faker::Company.name,
@@ -238,7 +238,7 @@ end
   )
 end
 
-5.times do 
+3.times do 
   job = Job.create(
     user_id: user.id,
     company: Faker::Company.name,
@@ -259,7 +259,7 @@ end
   )
 end
 
-5.times do 
+3.times do 
   job = Job.create(
     user_id: user.id,
     company: Faker::Company.name,

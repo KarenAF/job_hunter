@@ -52,4 +52,39 @@ class JobsController < ApplicationController
     redirect_to '/jobs'
   end
 
+  def edit
+    @job = Job.find_by(id: params[:id])
+    render 'edit.html.erb'
+  end
+
+  def update
+    @job = Job.find_by(id: params[:id])
+    @job.update(
+      user_id: current_user.id,
+      company: params['company'],
+      position: params['position'],
+      source: params['source'],
+      status: params['status'],
+      found_date: params['found_date'],
+      listing_url: params['listing_url'],
+      job_type: params['job_type'],
+      address: params['address'],
+      city: params['city'],
+      state: params['state'],
+      zip_code: params['zip_code'],
+      phone_number: params['phone_number'],
+      company_website: params['company_website'],
+      hourly_wage: params['hourly_wage'],
+      salary: params['salary'],
+      applied_date: params['applied_date'],
+      interview_date: params['interview_date'],
+      offer_date: params['offer_date'],
+      rating: params['rating'],
+      notes: params['notes']      
+    )
+    @job.save
+    flash[:success] = "job listing successfully updated"
+    redirect_to "/jobs/#{@job.id}"
+  end    
+
 end

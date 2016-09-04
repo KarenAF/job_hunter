@@ -1,0 +1,84 @@
+<h3> <%= @job.company %>, <%= @job.position %> </h3>
+<h1> Edit job listing details: </h1>
+
+<%= form_tag "/jobs/#{@job.id}", method: :patch do %>
+  <div class = "form-group">
+    <%= label_tag :company %>
+    <%= text_field_tag :company, @job.company, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :position  %>
+    <%= text_field_tag :position, @job.position, class: "form-control"   %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :status  %>
+    <%= text_field_tag :status, @job.status, class: "form-control"   %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :source  %>
+    <%= text_field_tag :source, @job.source, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :found_date  %>
+    <%= text_field_tag :found_date, DateTime.now, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :listing_url  %>
+    <%= text_field_tag :listing_url, @job.listing_url, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :address  %>
+    <%= text_field_tag :address, @job.address, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :city  %>
+    <%= text_field_tag :city, @job.city, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :state  %>
+    <%= text_field_tag :state, @job.state, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :zip_code  %>
+    <%= text_field_tag :zip_code, @job.zip_code, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :phone_number  %>
+    <%= text_field_tag :phone_number, @job.phone_number, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :company_website  %>
+    <%= text_field_tag :company_website, @job.company_website, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :hourly_wage  %>
+    <%= text_field_tag :hourly_wage, @job.hourly_wage, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :salary  %>
+    <%= text_field_tag :salary, @job.salary, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :interview_date  %>
+    <%= text_field_tag :interview_date, @job.interview_date, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :offer_date  %>
+    <%= text_field_tag :offer_date, @job.offer_date, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :rating  %>
+    <%= text_field_tag :rating, @job.rating, class: "form-control"  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :notes  %>
+    <%= text_field_tag :notes, @job.notes, class: "form-control"  %>
+  </div>                  
+  <div class = "form-group">
+    <%= submit_tag "Update job" %>
+  </div>
+<% end %>
+
+<h5> <a href="/jobs/<%= @job.id %>"> Cancel </a></h5>
+
+<h5> <a href="/jobs"> Back to all jobs </a></h5>
