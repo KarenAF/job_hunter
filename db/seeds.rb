@@ -312,7 +312,7 @@ end
 jobs = Job.all
 
 jobs.each do |job|
-  5.times do
+  2.times do
     name = Faker::Name.first_name
     Networking.create(
       first_name: name,
@@ -320,7 +320,7 @@ jobs.each do |job|
       user_id: job.user.id,
       date_contacted: DateTime.now,
       email: "#{name}@gmail.com",
-      job_id: rand(1..4),
+      job_id: job.id,
       emailed: true,
       phoned: false,
       letter_sent: false,
