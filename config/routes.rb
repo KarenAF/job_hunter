@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   get '/' => 'networkings#index'
   get '/networkings' => 'networkings#index'
   get '/networkings/new' => 'networkings#new'
-  get '/networkings/:id' => 'networkings#show'  
-  post '/networkings' => 'networkings#create'  
+  post '/networkings' => 'networkings#create' 
+  get '/networkings/:id' => 'networkings#show'   
+  get '/networkings/:id/edit' => 'networkings#edit'  
+  patch '/networkings/:id' => 'networkings#update'  
 
   get '/signup' => 'users#new'
   post 'users' => 'users#create'

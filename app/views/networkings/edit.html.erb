@@ -1,0 +1,45 @@
+<h1>Edit Networking Connection:</h1>
+
+<%= form_tag "/networkings/#{@networking.id}", method: :patch do %>
+  <div class = "form-group">
+    <%= label_tag :first_name %>
+    <%= text_field_tag :first_name, @networking.first_name  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :last_name  %>
+    <%= text_field_tag :last_name, @networking.last_name   %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :date_contacted  %>
+    <%= text_field_tag :date_contacted, @networking.date_contacted  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :email  %>
+    <%= text_field_tag :email, @networking.email  %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :job_id  %>
+    <%= text_field_tag :job_id, @networking.job_id %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :emailed  %>
+    <%= text_field_tag :emailed, @networking.emailed %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :phoned  %>
+    <%= text_field_tag :phoned, @networking.phoned %>
+  </div>
+  <div class = "form-group">
+    <%= label_tag :letter_sent  %>
+    <%= text_field_tag :letter_sent, @networking.letter_sent %>
+  </div>     
+  <div class = "form-group">
+    <%= label_tag :notes  %>
+    <%= text_field_tag :notes, @networking.notes %>
+  </div>     
+  <div class = "form-group">
+    <%= submit_tag "Update networking connection" %>
+  </div>
+<a href = "/networkings/<%= @networking.id %>"><p> cancel </p></a>
+<a href="/networkings">Back to all networking connections</a>
+<% end %>
