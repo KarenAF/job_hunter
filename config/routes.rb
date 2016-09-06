@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   get '/jobs/:job_id/job_skills/new' => 'job_skills#new'  
-  post '/jobs/:job_id/job_skills' => 'job_skills#create'  
+  post '/jobs/:job_id/job_skills' => 'job_skills#create' 
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
