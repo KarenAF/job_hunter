@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   get '/jobs/:job_id/job_skills/new' => 'job_skills#new'  
   post '/jobs/:job_id/job_skills' => 'job_skills#create' 
+  delete '/jobs/:job_id/job_skills/:id' => 'job_skills#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

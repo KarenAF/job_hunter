@@ -15,4 +15,11 @@ class JobSkillsController < ApplicationController
     )
     redirect_to "/jobs/#{@job.id}"
   end
+
+  def destroy 
+    @job = Job.find_by(id: params['job_id'])
+    @jobskill = JobSkill.find_by(id: params[:id])
+    @jobskill.destroy
+    redirect_to "/jobs/#{@job.id}"
+  end
 end
