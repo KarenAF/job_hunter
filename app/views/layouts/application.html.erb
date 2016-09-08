@@ -27,6 +27,7 @@
   
 </head>
 <body>
+<div class = "container">
 
  <ul class="nav navbar-nav navbar-right">
  <% if current_user %>
@@ -49,7 +50,6 @@
 
 <li><a href="/networkings">Networking</a></li>
 
-<div class = "container">
 
   <% flash.each do |name, message| %>
     <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">
@@ -59,6 +59,6 @@
     <% end %>
 
 <%= yield %>
-
+</div>
 </body>
 </html>

@@ -1,16 +1,50 @@
-<h3> Job listing details: </h3>
-<p>Company: <%= @job.company %></p>
-<p>Position: <%= @job.position %></p>
-<p>Source: <%= @job.source %></p>
-<p>Found_date: <%= @job.found_date %></p>
-<p>Listing_url: <%= @job.listing_url %></p>
-<p>Address: <%= @job.address %></p>
-<p>City: <%= @job.city %></p>
-<p>State: <%= @job.state %></p>
-<p>Zip_code: <%= @job.zip_code.upcase if @job.zip_code %></p>
-<p>Phone_number: <%= @job.phone_number %></p>
-<p>Status: <%= @job.status %></p>
-<p>Skills: <% @skills.each do |jobskill| %></p>
+ <h3> Job listing details: </h3>
+    <div class="row card-panel red lighten-5">
+      <div class="col s2">Company</div>
+      <div class="col s5"><%= @job.company %></div>
+    </div>
+    <div class="row">
+      <div class="col s2">Position</div>
+      <div class="col s5"><%= @job.position %></div>
+    </div>
+    <div class="row">
+      <div class="col s2">Source</div>
+      <div class="col s5"><%= @job.source %></div>
+    </div>
+    <div class="row">
+      <div class="col s2">Date Found</div>
+      <div class="col s5"><%= @job.found_date %></div>
+    </div>
+    <div class="row">
+      <div class="col s2">Listing URL</div>
+      <div class="col s5"><%= @job.listing_url %></div>
+    </div>           
+    <div class="row">
+      <div class="col s2">Address</div>
+      <div class="col s5"><%= @job.address %></div>
+    </div>
+    <div class="row">
+      <div class="col s2">City</div>
+      <div class="col s5"><%= @job.city %></div>
+    </div>
+    <div class="row">
+      <div class="col s2">State</div>
+      <div class="col s5"><%= @job.state %></div>
+    </div>
+    <div class="row">
+      <div class="col s2">Zip code</div>
+      <div class="col s5"><%= @job.zip_code%></div>
+    </div>
+    <div class="row">
+      <div class="col s2">Phone number</div>
+      <div class="col s5"><%= @job.phone_number %></div>
+    </div>
+    <div class="row">
+      <div class="col s2">Status</div>
+      <div class="col s5"><%= @job.status %></div>
+    </div>
+
+<h5>Skills: <% @skills.each do |jobskill| %></h5>
 <p> <%= jobskill.skill.name %>  <%= link_to "Delete this skill", "/jobs/#{@job.id}/job_skills/#{jobskill.id}", method: :delete %> </p> 
 <% end %>
 

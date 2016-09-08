@@ -3,13 +3,29 @@
 <h5> <a href="/jobs/new"> New job listing: </a></h5>
 <div>
 <p> -----------------------------------------------------------------</p>
+
 <h2>Jobs I haven't applied to yet: </h2>
 <p><% @jobs1.each do |job| %></p>
-<p>Company: <%= job.company %></p>
-<p>Position: <%= job.position %></p>
-<p>Source: <%= job.source %></p>
-<p>Found_date: <%= job.found_date %></p>
-<p>City: <%= job.city %></p>
+    <div class="row">
+      <div class="col s2">Company</div>
+      <div class="col s5"><%= job.company %></div>
+    </div>
+    <div class="row">
+      <div class="col s2">Position</div>
+      <div class="col s5"><%= job.position %></div>
+    </div>
+    <div class="row">
+      <div class="col s2">Source</div>
+      <div class="col s5"><%= job.source %></div>
+    </div>
+    <div class="row">
+      <div class="col s2">Date Found</div>
+      <div class="col s5"><%= job.found_date %></div>
+    </div>
+    <div class="row">
+      <div class="col s2">City</div>
+      <div class="col s5"><%= job.city %></div>
+    </div>    
 <p> <a href="/jobs/<%= job.id %>">See listing details </a> </p>
 <br>
 <br>
