@@ -1,112 +1,177 @@
-<h1>Job Listings</h1>
+<h5> <a href="/jobs/new"> New job listing </a></h5>
 
-<h5> <a href="/jobs/new"> New job listing: </a></h5>
-<div>
-<p> -----------------------------------------------------------------</p>
-
+<div class="row card-panel orange">
 <h2>Jobs I haven't applied to yet: </h2>
 <p><% @jobs1.each do |job| %></p>
-    <div class="row">
+    <div class="row orange lighten-5">
       <div class="col s2">Company</div>
       <div class="col s5"><%= job.company %></div>
     </div>
-    <div class="row">
+    <div class="row orange lighten-4">
       <div class="col s2">Position</div>
-      <div class="col s5"><%= job.position %></div>
+      <div class="col s5"><%= job.position.capitalize %></div>
     </div>
-    <div class="row">
+    <div class="row orange lighten-3">
       <div class="col s2">Source</div>
       <div class="col s5"><%= job.source %></div>
     </div>
-    <div class="row">
+    <div class="row orange lighten-2">
       <div class="col s2">Date Found</div>
       <div class="col s5"><%= job.found_date %></div>
     </div>
-    <div class="row">
-      <div class="col s2">City</div>
-      <div class="col s5"><%= job.city %></div>
+    <div class="row orange lighten-1">
+      <div class="col s2">Status</div>
+      <div class="col s5"><%= job.status %></div>
     </div>    
 <p> <a href="/jobs/<%= job.id %>">See listing details </a> </p>
 <br>
-<br>
 <% end %>
- </div>
-<p> -----------------------------------------------------------------</p>
+</div>
 
-<div>
+<div class="row card-panel yellow">
 <h2>Jobs I am applying to: </h2>
 <p><% @jobs2.each do |job| %></p>
-<p>Company: <%= job.company %></p>
-<p>Position: <%= job.position %></p>
-<p>Source: <%= job.source %></p>
-<p>Found_date: <%= job.found_date %></p>
-<p>City: <%= job.city %></p>
+    <div class="row yellow lighten-5">
+      <div class="col s2">Company</div>
+      <div class="col s5"><%= job.company %></div>
+    </div>
+    <div class="row yellow lighten-4">
+      <div class="col s2">Position</div>
+      <div class="col s5"><%= job.position.capitalize %></div>
+    </div>
+    <div class="row yellow lighten-3">
+      <div class="col s2">Source</div>
+      <div class="col s5"><%= job.source %></div>
+    </div>
+    <div class="row yellow lighten-2">
+      <div class="col s2">Date Found</div>
+      <div class="col s5"><%= job.found_date %></div>
+    </div>
+    <div class="row yellow lighten-1">
+      <div class="col s2">Status</div>
+      <div class="col s5"><%= job.status %></div>
+    </div>    
 <p> <a href="/jobs/<%= job.id %>">See listing details </a> </p>
-<br>
 <br>
 <% end %>
 </div>
-<p> -----------------------------------------------------------------</p>
 
-<div>
+
+<div class="row card-panel light-green">
 <h2>Jobs I applied to: </h2>
 <p><% @jobs3.each do |job| %></p>
-<p>Company: <%= job.company %></p>
-<p>Position: <%= job.position %></p>
-<p>Source: <%= job.source %></p>
-<p>Found_date: <%= job.found_date %></p>
-<p>City: <%= job.city %></p>
+    <div class="row light-green lighten-5">
+      <div class="col s2">Company</div>
+      <div class="col s5"><%= job.company %></div>
+    </div>
+    <div class="row light-green lighten-4">
+      <div class="col s2">Position</div>
+      <div class="col s5"><%= job.position.capitalize %></div>
+    </div>
+    <div class="row light-green lighten-3">
+      <div class="col s2">Source</div>
+      <div class="col s5"><%= job.source %></div>
+    </div>
+    <div class="row light-green lighten-2">
+      <div class="col s2">Date Found</div>
+      <div class="col s5"><%= job.found_date %></div>
+    </div>
+    <div class="row light-green lighten-1">
+      <div class="col s2">Status</div>
+      <div class="col s5"><%= job.status %></div>
+    </div>    
 <p> <a href="/jobs/<%= job.id %>">See listing details </a> </p>
-<br>
 <br>
 <% end %>
 </div>
-<p> -----------------------------------------------------------------</p>
 
-<div>
+
+<div class="row card-panel teal">
 <h2>Jobs I got an interview with: </h2>
 <p><% @jobs4.each do |job| %></p>
-<p>Company: <%= job.company %></p>
-<p>Position: <%= job.position %></p>
-<p>Source: <%= job.source %></p>
-<p>Found_date: <%= job.found_date %></p>
-<p>City: <%= job.city %></p>
+    <div class="row teal lighten-5">
+      <div class="col s2">Company</div>
+      <div class="col s5"><%= job.company %></div>
+    </div>
+    <div class="row teal lighten-4">
+      <div class="col s2">Position</div>
+      <div class="col s5"><%= job.position.capitalize %></div>
+    </div>
+    <div class="row teal lighten-3">
+      <div class="col s2">Source</div>
+      <div class="col s5"><%= job.source %></div>
+    </div>
+    <div class="row teal lighten-2">
+      <div class="col s2">Date Found</div>
+      <div class="col s5"><%= job.found_date %></div>
+    </div>
+    <div class="row teal lighten-1">
+      <div class="col s2">Status</div>
+      <div class="col s5"><%= job.status %></div>
+    </div>    
 <p> <a href="/jobs/<%= job.id %>">See listing details </a> </p>
-<br>
 <br>
 <% end %>
 </div>
-<p> -----------------------------------------------------------------</p>
 
-<div>
+
+<div class="row card-panel indigo">
 <h2>Jobs I interviewed with: </h2>
 <p><% @jobs5.each do |job| %></p>
-<p>Company: <%= job.company %></p>
-<p>Position: <%= job.position %></p>
-<p>Source: <%= job.source %></p>
-<p>Found_date: <%= job.found_date %></p>
-<p>City: <%= job.city %></p>
+    <div class="row indigo lighten-5">
+      <div class="col s2">Company</div>
+      <div class="col s5"><%= job.company %></div>
+    </div>
+    <div class="row indigo lighten-4">
+      <div class="col s2">Position</div>
+      <div class="col s5"><%= job.position.capitalize %></div>
+    </div>
+    <div class="row indigo lighten-3">
+      <div class="col s2">Source</div>
+      <div class="col s5"><%= job.source %></div>
+    </div>
+    <div class="row indigo lighten-2">
+      <div class="col s2">Date Found</div>
+      <div class="col s5"><%= job.found_date %></div>
+    </div>
+    <div class="row indigo lighten-1">
+      <div class="col s2">Status</div>
+      <div class="col s5"><%= job.status %></div>
+    </div>    
 <p> <a href="/jobs/<%= job.id %>">See listing details </a> </p>
-<br>
 <br>
 <% end %>
 </div>
-<p> -----------------------------------------------------------------</p>
 
-<div>
+
+<div class="row card-panel deep-purple">
 <h2>Jobs I've received offers from: </h2>
 <p><% @jobs6.each do |job| %></p>
-<p>Company: <%= job.company %></p>
-<p>Position: <%= job.position %></p>
-<p>Source: <%= job.source %></p>
-<p>Found_date: <%= job.found_date %></p>
-<p>City: <%= job.city %></p>
+    <div class="row deep-purple lighten-5">
+      <div class="col s2">Company</div>
+      <div class="col s5"><%= job.company %></div>
+    </div>
+    <div class="row deep-purple lighten-4">
+      <div class="col s2">Position</div>
+      <div class="col s5"><%= job.position.capitalize %></div>
+    </div>
+    <div class="row deep-purple lighten-3">
+      <div class="col s2">Source</div>
+      <div class="col s5"><%= job.source %></div>
+    </div>
+    <div class="row deep-purple lighten-2">
+      <div class="col s2">Date Found</div>
+      <div class="col s5"><%= job.found_date %></div>
+    </div>
+    <div class="row deep-purple lighten-1">
+      <div class="col s2">Status</div>
+      <div class="col s5"><%= job.status %></div>
+    </div>    
 <p> <a href="/jobs/<%= job.id %>">See listing details </a> </p>
-<br>
 <br>
 <% end %>
 </div>
-<p> -----------------------------------------------------------------</p>
+
 
 
 
