@@ -3,5 +3,5 @@ class Job < ActiveRecord::Base
   has_many :networkings 
   has_many :job_skills  
   has_many :skills, through: :job_skills  
-  
+
 end

@@ -1,13 +1,36 @@
-<h3> Networking connection details: </h3>
-<h4><%= @networking.first_name %> <%= @networking.last_name %></h4>
-<h5>Date first contacted: <%= @networking.date_contacted %></h5>
-<h5>Email address: <%= @networking.email%></h5>
-<h5>Job: <%= @job.company %></h5>
-<h5>Emailed? <%= @networking.emailed %></h5>
-<h5>Phoned? <%= @networking.phoned%></h5>
-<h5>Letter sent? <%= @networking.letter_sent%></h5>
-<h5>Notes: <%= @networking.notes %></h5>
-
+<h4> Networking connection details: </h4>
+<div class="row card-panel grey lighten-2">
+  <h5><%= @networking.first_name %> <%= @networking.last_name %></h5>
+  <br>
+  <div class="row">
+    <div class="col s3">Date first contacted</div> 
+    <div class="col s5"> <%= @networking.date_contacted %></div>
+  </div>
+  <div class="row">
+    <div class="col s3">Email Address</div> 
+    <div class="col s5"> <%= @networking.email%></div>
+  </div>
+  <div class="row">
+    <div class="col s3">Related Job Listing</div> 
+    <div class="col s5"> <%= @job.company %>></div>
+  </div>
+  <div class="row">
+    <div class="col s3">Emailed?</div> 
+    <div class="col s5"> <%= @networking.emailed %></div>
+  </div>
+  <div class="row">
+    <div class="col s3">Phoned?</div> 
+    <div class="col s5"> <%= @networking.phoned%></div>
+  </div>
+  <div class="row">
+    <div class="col s3">Letter Sent?</div> 
+    <div class="col s5"> <%= @networking.letter_sent%></div>
+  </div>
+  <div class="row">
+    <div class="col s3">Notes</div> 
+    <div class="col s5"> <%= @networking.notes %></div>
+  </div>          
+</div>
 
 <p><%= link_to "Add networking connection", "/networkings/new", class: "btn btn-success"%></p>
 
