@@ -1,10 +1,26 @@
 <h4>Networking Connections</h4>
 
-<div class="row card-panel grey lighten-2">
+<table>
+  <thead>
+    <tr>
+        <th data-field="name">Name</th>
+        <th data-field="emailed">Emailed?</th>
+        <th data-field="phoned">Phoned?</th>
+        <th data-field="letter_sent">Letter Sent?</th>
+    </tr>
+  </thead>
 <% @networkings.each do |networking|%>
-    <p> <a href="/networkings/<%=networking.id%>"> <%= networking.first_name %> <%= networking.last_name %> </a></p>
-    <% end %>
-  </div>
+  <tbody>
+    <tr>
+      <td><a href="/networkings/<%=networking.id%>"> <%= networking.first_name %> <%= networking.last_name %> </a></td>
+      <td><%= networking.friendly_emailed %></td>
+      <td><%= networking.friendly_phoned %></td>
+      <td><%= networking.friendly_lettered %></td>
+    </tr>
+  </tbody>
+<% end %>
+</table>
+
 <h5> <a href="/networkings/new"> New networking connection </a></h5>
 
 <a href = "/jobs/"><p> cancel </p></a>
