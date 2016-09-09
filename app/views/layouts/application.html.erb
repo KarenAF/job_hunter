@@ -1,78 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-<div class="container">
-  <title>JobHunter</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <head>
+    <title>JobHunter</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<div class="row">
-<div class="col s8">
-<form action='http://www.indeed.com/jobs' METHOD='GET'>
-<table cellspacing='0' style='font-family:arial'>
-<tr><td style='font-size:16px;color:#FF6600'><b>what</b></td>
-    <td style='font-size:16px;color:#FF6600'><b>where</b></td>
-    <td> </td></tr>
-<tr><td><input name='q' value='' size='25'></td>
-    <td><input name='l' value='' size=''></td>
-    <td><input type='submit' value='Find Jobs'></td></tr>
-<tr><td valign='top' style='font-size:10px'>job title, keywords or company</td>
-    <td colspan='2'  valign='top' style='font-size:10px;padding:0px;margin:0px;border:0px;'>
-    <table cellpadding='0' width='100%' style='padding:0px;margin:0px;border:0px;'>
-    <tr><td valign='top' style='font-size:10px;padding:0px;margin:0px;border:0px;'>city, state or zip</td>
-        <td style='padding:0px;margin:0px;border:0px;width:116px' align='right'>
-        <a href='http://www.indeed.com'>
-        <img align='right' border='0' src='http://www.indeed.com/images/poweredbyindeed.gif'></a>
-        </td></tr>
-    </table></td></tr>
-</table></form>
-</div> 
+    <nav>
+      <div class="nav-wrapper orange">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/networkings">Networking</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+      </div>
+    </nav>
 
-  
-<div class="col s3">
-
-
- <ul class="nav navbar-nav navbar-right">
- <% if current_user %>
- <%= current_user.first_name %>
- <% end %>
-      <% unless current_user %>
-        <li><a href="/signup">Sign up</a></li>
-      <% end %>
-      <% unless current_user %>
-        <li><a href="/login">Log in</a></li>
-      <% end %>
-      <% if current_user %>  
-        <li><a href="/logout">Log out</a></li>
-      <% end %> 
-          </ul>
-        </li>
-</ul>
-</div>
-<br>
-<div class="col s1">
-<%= image_tag "cute_tiger.jpg", class:"tiger" %>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-</head>
-<body>
-<div class="container">
-<a href="/networkings">Networking</a>
-
-
-  <% flash.each do |name, message| %>
-    <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</span><span class="sr-only">Close</span></button>
-    <%= message.html_safe %>
+    <div class="container">
+      <div class="row">
+        <div class="col s8">
+          <form action='http://www.indeed.com/jobs' METHOD='GET'>
+            <table cellspacing='0' style='font-family:arial'>
+              <tr>
+                <td style='font-size:16px;color:#FF6600'><b>what</b></td>
+                <td style='font-size:16px;color:#FF6600'><b>where</b></td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td><input name='q' value='' size='25'></td>
+                <td><input name='l' value='' size=''></td>
+                <td><input type='submit' value='Find Jobs'></td>
+              </tr>
+              <tr>
+                <td valign='top' style='font-size:10px'>job title, keywords or company</td>
+                <td colspan='2'  valign='top' style='font-size:10px;padding:0px;margin:0px;border:0px;'>
+                  <table cellpadding='0' width='100%' style='padding:0px;margin:0px;border:0px;'>
+                    <tr>
+                      <td valign='top' style='font-size:10px;padding:0px;margin:0px;border:0px;'>city, state or zip</td>
+                      <td style='padding:0px;margin:0px;border:0px;width:116px' align='right'>
+                      <a href='http://www.indeed.com'>
+                      <img align='right' border='0' src='http://www.indeed.com/images/poweredbyindeed.gif'></a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div> 
+      </div>
     </div>
-    <% end %>
 
-<%= yield %>
-</div>
-</body>
+    <div class="container">
+      <% flash.each do |name, message| %>
+        <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span><span class="sr-only">Close</span></button>
+        <%= message.html_safe %>
+        </div>
+        <% end %>
+
+      <%= yield %>
+    </div>
+  </body>
 </html>
