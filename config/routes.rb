@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :api do
+  namespace :v1 do
+    get 'jobs/index'
+    end
+  end
+
   get 'sessions/index'
 
   get '/' => 'jobs#index'
