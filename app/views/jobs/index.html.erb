@@ -10,7 +10,7 @@
     Source: <input ng-model="inputSource">
     <br>
     Status: 
-    <div class="input-field col s12">
+   
       <select ng-model="inputStatus">
         <option value="" disabled selected>Choose your option</option>
         <option value="not_yet_applied">not applied</option>
@@ -22,7 +22,7 @@
       </select>
     </div>
     <button ng-click="addJob(inputCompany, inputPosition, inputSource, inputStatus)">Add listing</button>
-  </div>
+
 
 
 <div class="row card-panel orange">
@@ -38,8 +38,19 @@
     </div>
     <div class="row">
       <div class="col s2">Status</div>
-      <div class="col s5">{{job.status}}</div>
-    </div>   
+      <div class="col s5">{{job.status}}</div>   
+    </div> 
+    <div class="input-field col s12 select-dropdown">
+      <select ng-model="inputStatus">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="not_yet_applied">not applied</option>
+        <option value="applying_to">applying</option>
+        <option value="applied_to">applied</option>
+        <option value="interview_set_up">interview set up</option>
+        <option value="interviewed_with">interviewed</option>
+        <option value="job_offered">got job offer</option>
+      </select>
+    </div> 
     <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>
@@ -142,7 +153,8 @@
 </div>
 
 
-<script>  $(document).ready(function() {
+<script>  
+  $(document).ready(function() {
     $('select').material_select();
   });
 </script>
