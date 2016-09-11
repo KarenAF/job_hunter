@@ -37,6 +37,9 @@
       });
     };
 
+    $scope.updateStatus = function(inputStatus){
+      var params ;
+    }
     $scope.addJob = function(inputCompany, inputPosition, inputSource, inputStatus) {
       var params = {
         company: inputCompany,

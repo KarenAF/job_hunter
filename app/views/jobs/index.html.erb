@@ -9,7 +9,18 @@
     <br>
     Source: <input ng-model="inputSource">
     <br>
-    Status: <input ng-model="inputStatus">
+    Status: 
+    <div class="input-field col s12">
+      <select>
+        <option value="" disabled selected ng-model="inputStatus">Choose your option</option>
+        <option value="not_yet_applied" ng-model="inputStatus">not applied</option>
+        <option value="applying_to" ng-model="inputStatus">applying</option>
+        <option value="applied_to" ng-model="inputStatus">applied</option>
+        <option value="interview_set_up" ng-model="inputStatus">interview set up</option>
+        <option value="interviewed_with" ng-model="inputStatus">interviewed</option>
+        <option value="job_offered" ng-model="inputStatus">got job offer</option>
+      </select>
+    </div>
     <button ng-click="addJob(inputCompany, inputPosition, inputSource, inputStatus)">Add listing</button>
   </div>
 
@@ -130,3 +141,8 @@
   </div>  
 </div>
 
+
+<script>  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
