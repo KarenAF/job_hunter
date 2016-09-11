@@ -2,3 +2,17 @@
   width: 7%;
   height: 7%;
 }
+
+.ng-enter, .ng-move{
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.ng-leave{
+  -webkit-animation: fadeOut 1s;
+  -moz-animation: fadeOut 1s;
+  -o-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+}
