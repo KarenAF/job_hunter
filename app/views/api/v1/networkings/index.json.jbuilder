@@ -8,5 +8,8 @@ json.array! @networkings.each do |networking|
   json.emailed networking.emailed
   json.phoned networking.phoned
   json.letter_sent networking.letter_sent
+  json.friendly_emailed networking.friendly_emailed
+  json.friendly_phoned networking.friendly_phoned
+  json.friendly_lettered networking.friendly_lettered
   json.notes networking.notes
 end

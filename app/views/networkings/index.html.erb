@@ -12,16 +12,14 @@
         <th data-field="letter_sent">Letter Sent?</th>
     </tr>
   </thead>
-<% @networkings.each do |networking|%>
   <tbody>
-    <tr>
-      <td><a href="/networkings/<%=networking.id%>"> <%= networking.first_name %> <%= networking.last_name %> </a></td>
-      <td><%= networking.friendly_emailed %></td>
-      <td><%= networking.friendly_phoned %></td>
-      <td><%= networking.friendly_lettered %></td>
+    <tr ng-repeat="networking in networkings">
+      <td><a href="/networkings/{{networking.id}}"> {{networking.first_name}} {{ networking.last_name }} </a></td>
+      <td>{{networking.friendly_emailed }}</td>
+      <td>{{networking.friendly_phoned }}</td>
+      <td>{{networking.friendly_lettered }}</td>
     </tr>
   </tbody>
-<% end %>
 </table>
 
 <h5> <a href="/networkings/new"> New networking connection </a></h5>
