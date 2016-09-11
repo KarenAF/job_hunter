@@ -1,9 +1,20 @@
 <div ng-app="app">
- <div ng-controller="jobsCtrl">
-
-{{message}} 
+ <div ng-controller="jobsCtrl" ng-init="setup()">
 
 <h5> <a href="/jobs/new"> New job listing </a></h5>
+
+<h5> Quick-Add a job listing: </h5>
+  <div>
+    Company: <input ng-model="inputCompany">
+    <br>
+    Position: <input ng-model="inputPosition">
+    <br>
+    Source: <input ng-model="inputSource">
+    <br>
+    Status: <input ng-model="inputStatus">
+    <button ng-click="addJob(inputCompany, inputPosition, inputSource, inputStatus)">Add listing</button>
+  </div>
+
 
 <div class="row card-panel orange">
 <h4>Jobs I haven't applied to yet: </h4>
