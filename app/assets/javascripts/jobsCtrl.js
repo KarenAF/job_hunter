@@ -7,27 +7,52 @@
     $scope.setup = function() {
       $http.get('/api/v1/jobs.json').then(function(response){
         $scope.jobs = response.data;
-        console.log($scope.jobs);
-      });
-    };
-   $scope.message = "Hello world";
+        $scope.notAppliedJobs = [];
+        $scope.applyingJobs = [];
+        $scope.appliedJobs = [];
+        $scope.interviewSetupJobs = [];
+        $scope.interviewedJobs = [];
+        $scope.offeredJobs = [];
 
-   $scope.addJob = function(inputCompany, inputPosition, inputSource, inputStatus) {
-    var params = {
-      company: inputCompany,
-      position: inputPosition,
-      source: inputSource,
-      status: inputStatus
-    };
-    $http.post('/api/v1/jobs.json', params).then(function(response) {
-        $scope.jobs.push(response.data);
-        $scope.errors = [];
-        console.log(params);
-      }, function(errorResponse){
-        $scope.errors = errorResponse.data.errors;
+        for(var i = 0; i < $scope.jobs.length; i++){
+          if ($scope.jobs[i].status == "not_yet_applied"){
+            $scope.notAppliedJobs.push($scope.jobs[i]);
+          }
+          else if ($scope.jobs[i].status == "applying_to"){
+            $scope.applyingJobs.push($scope.jobs[i]);
+          }
+          else if ($scope.jobs[i].status == "applied_to"){
+            $scope.appliedJobs.push($scope.jobs[i]);
+          }
+          else if ($scope.jobs[i].status == "interview_set_up"){
+            $scope.interviewSetupJobs.push($scope.jobs[i]);
+          }
+          else if ($scope.jobs[i].status == "interviewed_with"){
+            $scope.interviewedJobs.push($scope.jobs[i]);
+          }
+          else if ($scope.jobs[i].status == "job_offered"){
+            $scope.offeredJobs.push($scope.jobs[i]);
+          }                                                  
+        };
       });
-   };
+    };
+
+    $scope.addJob = function(inputCompany, inputPosition, inputSource, inputStatus) {
+     var params = {
+       company: inputCompany,
+       position: inputPosition,
+       source: inputSource,
+       status: inputStatus
+     };
+     
+     $http.post('/api/v1/jobs.json', params).then(function(response) {
+         $scope.jobs.push(response.data);
+         console.log(params);
+       });
+    };
 
     window.$scope = $scope;
+   
+    $scope.message = "Hello world";
   });
 })();
