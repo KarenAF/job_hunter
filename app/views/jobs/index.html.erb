@@ -10,7 +10,6 @@
     Source: <input ng-model="inputSource">
     <br>
     Status: 
-   
       <select ng-model="inputStatus">
         <option value="" disabled selected>Choose your option</option>
         <option value="not_yet_applied">not applied</option>
@@ -20,10 +19,8 @@
         <option value="interviewed_with">interviewed</option>
         <option value="job_offered">got job offer</option>
       </select>
-    </div>
-    <button ng-click="addJob(inputCompany, inputPosition, inputSource, inputStatus)">Add listing</button>
-
-
+  </div>
+  <button ng-click="addJob(inputCompany, inputPosition, inputSource, inputStatus)">Add listing</button>
 
 <div class="row card-panel orange">
 <h4>Jobs I haven't applied to yet: </h4>
