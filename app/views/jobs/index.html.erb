@@ -22,6 +22,9 @@
   </div>
   <button ng-click="addJob(inputCompany, inputPosition, inputSource, inputStatus)">Add listing</button>
 
+<br>
+<br>
+
 <div class="row card-panel orange">
 <h4>Jobs I haven't applied to yet: </h4>
   <div class="row card-panel orange lighten-4" ng-repeat="job in notYetAppliedJobs | orderBy: 'updated_at' : true">
@@ -38,11 +41,23 @@
       <div class="col s5">{{job.status}}</div>   
     </div> 
     <div input-field>
-      <select class="" ng-model="job.status" material-select watch>
-        <option value="applied_to">applied</option>
-        <option value="interview_set_up">interview set up</option>      
+      <select class="" ng-model="select.value1">
+        <option ng-repeat="applied_to">{{job.status}}</option>
+        <option ng-repeat="interview_set_up">{{job.status}}</option>      
       </select>
     </div>
+    <div class="row">
+            <div class="section col s4">
+                <div input-field>
+                    <select ng-model="select.value" material-select>
+                        <option ng-repeat="value in select.choices">{{value}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="section col s8">
+                <h5>You selected: <b>{{select.value}}</b></h5>
+            </div>
+        </div>
     <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>
@@ -150,3 +165,6 @@
     $('select').material_select();
   });
 </script>
+
+
+
