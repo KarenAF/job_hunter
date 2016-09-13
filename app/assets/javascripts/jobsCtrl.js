@@ -46,6 +46,9 @@
       var updatedJob = inputJob;
       console.log(updatedJob);
       var params = {
+        company: updatedJob.company,
+        position: updatedJob.position,
+        source: updatedJob.source,
         status: inputStatus
       }
       console.log(inputStatus);
