@@ -38,12 +38,11 @@
     };
 
     $scope.updateStatus = function(inputJob, inputStatus){
-      $scope.job = inputJob;
-      var params = {
-        status: inputStatus
-      };
-      $http.post('/api/v1/jobs.json', params).then(function(response){
-        console.log(params);
+      var updatedJob = inputJob;
+      
+      updatedJob.status = inputStatus;
+      $http.patch('/api/v1/jobs/' + updatedJob.id + '.json', {job: updatedJob}).then(function(response){
+        console.log(updatedJob);
       });
       $scope.setup();
     };

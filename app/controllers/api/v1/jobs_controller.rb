@@ -12,6 +12,11 @@ class Api::V1::JobsController < ApplicationController
     render 'index.json.jbuilder'
   end
 
+  def show
+    @job = Job.find_by(id: params['id'])
+    render 'show.json.jbuilder'
+  end
+
   def create
     @job = Job.new(
       company: params[:company],
@@ -24,5 +29,14 @@ class Api::V1::JobsController < ApplicationController
     render 'index.json.jbuilder'
   end
 
-
+  def update
+    @job = Job.find_by(id: params['id'])
+    @job.update(
+      company: params[:company],
+      position: params[:position],
+      source: params[:source],
+      status: params[:status],
+    )
+    render 'show.json.jbuilder'
+  end
 end
