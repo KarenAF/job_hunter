@@ -42,19 +42,11 @@
       <div class="col s2">Status</div>
       <div class="col s5">{{job.status}}</div>   
     </div> 
-    <p>hello</p>
-    <div class="input-field col s12">
-        <select class="" ng-model="job.status" material-select watch>
-        <option value="" disabled selected>Choose your option</option>
-        <option value="not_yet_applied">not applied</option>
-        <option value="applying_to">applying</option>
-        <option value="applied_to">applied</option>
-        <option value="interview_set_up">interview set up</option>
-        <option value="interviewed_with">interviewed</option>
-        <option value="job_offered">got job offer</option>
+    <div input-field>
+        <select ng-options="status as status for status in statuses" ng-model="updatedStatus[$index]" material-select watch>
         </select>
     </div>
-    <button ng-click="updateStatus(job, inputStatus)">Update Status</button>
+    <button ng-click="updateStatus(job, updatedStatus[$index])">Update Status</button>
     <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>

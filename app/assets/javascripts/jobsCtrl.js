@@ -14,6 +14,11 @@
         $scope.interviewedJobs = [];
         $scope.offeredJobs = [];
 
+        $scope.updatedStatus = [];
+
+        $scope.statuses = ["not_yet_applied", "applying_to", "applied_to", "interview_set_up", "interviewed_with", "job_offered"];
+
+
         for(var i = 0; i < $scope.jobs.length; i++){
           if ($scope.jobs[i].status == "not_yet_applied"){
             $scope.notYetAppliedJobs.push($scope.jobs[i]);
@@ -38,15 +43,24 @@
     };
 
     $scope.updateStatus = function(inputJob, inputStatus){
-      $scope.job = inputJob;
+      var updatedJob = inputJob;
+      console.log(updatedJob);
       var params = {
+        company: updatedJob.company,
+        position: updatedJob.position,
+        source: updatedJob.source,
         status: inputStatus
-      };
-      $http.post('/api/v1/jobs.json', params).then(function(response){
-        console.log(params);
+      }
+      console.log(inputStatus);
+
+      updatedJob.status = inputStatus;
+      console.log(updatedJob.status);
+      $http.patch('/api/v1/jobs/' + updatedJob.id + '.json', params).then(function(response){
+        console.log(updatedJob);
       });
       $scope.setup();
     };
+
 
     $scope.addJob = function(inputCompany, inputPosition, inputSource, inputStatus) {
       var params = {
