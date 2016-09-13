@@ -10,6 +10,7 @@
     Source: <input ng-model="inputSource">
     <br>
     Status: 
+    <div class="input-field col s12">
       <select ng-model="inputStatus">
         <option value="" disabled selected>Choose your option</option>
         <option value="not_yet_applied">not applied</option>
@@ -19,6 +20,7 @@
         <option value="interviewed_with">interviewed</option>
         <option value="job_offered">got job offer</option>
       </select>
+    </div>
   </div>
   <button ng-click="addJob(inputCompany, inputPosition, inputSource, inputStatus)">Add listing</button>
 
@@ -40,24 +42,19 @@
       <div class="col s2">Status</div>
       <div class="col s5">{{job.status}}</div>   
     </div> 
-    <div input-field>
-      <select class="" ng-model="select.value1">
-        <option ng-repeat="applied_to">{{job.status}}</option>
-        <option ng-repeat="interview_set_up">{{job.status}}</option>      
-      </select>
+    <p>hello</p>
+    <div class="input-field col s12">
+        <select class="" ng-model="job.status" material-select watch>
+        <option value="" disabled selected>Choose your option</option>
+        <option value="not_yet_applied">not applied</option>
+        <option value="applying_to">applying</option>
+        <option value="applied_to">applied</option>
+        <option value="interview_set_up">interview set up</option>
+        <option value="interviewed_with">interviewed</option>
+        <option value="job_offered">got job offer</option>
+        </select>
     </div>
-    <div class="row">
-            <div class="section col s4">
-                <div input-field>
-                    <select ng-model="select.value" material-select>
-                        <option ng-repeat="value in select.choices">{{value}}</option>
-                    </select>
-                </div>
-            </div>
-            <div class="section col s8">
-                <h5>You selected: <b>{{select.value}}</b></h5>
-            </div>
-        </div>
+    <button ng-click="updateStatus(job, inputStatus)">Update Status</button>
     <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>

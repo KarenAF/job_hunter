@@ -37,9 +37,17 @@
       });
     };
 
-    $scope.updateStatus = function(inputStatus){
-      var params ;
-    }
+    $scope.updateStatus = function(inputJob, inputStatus){
+      $scope.job = inputJob;
+      var params = {
+        status: inputStatus
+      };
+      $http.post('/api/v1/jobs.json', params).then(function(response){
+        console.log(params);
+      });
+      $scope.setup();
+    };
+
     $scope.addJob = function(inputCompany, inputPosition, inputSource, inputStatus) {
       var params = {
         company: inputCompany,

@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require materialize-sprockets
 //= require angular
 //= require angular-animate
+//= require materialize
+//= require angular-materialize
 //= require app
 //= require_tree .
