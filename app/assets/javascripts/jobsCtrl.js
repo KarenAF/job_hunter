@@ -67,8 +67,8 @@
         company: inputCompany,
         position: inputPosition,
         source: inputSource,
-        status: inputStatus,
-        notes: inputNotes
+        notes: inputNotes,
+        status: inputStatus
       };
 
       $http.post('/api/v1/jobs.json', params).then(function(response) {
@@ -78,8 +78,8 @@
       $scope.inputCompany = "";
       $scope.inputPosition = "";
       $scope.inputSource = "";
-      $scope.inputStatus = "";
       $scope.inputNotes = "";
+      $scope.inputStatus = "";
       $scope.setup();
     };
 
