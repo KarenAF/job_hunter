@@ -78,7 +78,6 @@
       $scope.inputCompany = "";
       $scope.inputPosition = "";
       $scope.inputSource = "";
-      $scope.inputStatus = "";
       $scope.inputNotes = "";
       $scope.setup();
     };
