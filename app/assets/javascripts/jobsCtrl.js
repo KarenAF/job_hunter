@@ -62,12 +62,13 @@
     };
 
 
-    $scope.addJob = function(inputCompany, inputPosition, inputSource, inputStatus) {
+    $scope.addJob = function(inputCompany, inputPosition, inputSource, inputNotes, inputStatus) {
       var params = {
         company: inputCompany,
         position: inputPosition,
         source: inputSource,
-        status: inputStatus
+        status: inputStatus,
+        notes: inputNotes
       };
 
       $http.post('/api/v1/jobs.json', params).then(function(response) {
@@ -78,7 +79,7 @@
       $scope.inputPosition = "";
       $scope.inputSource = "";
       $scope.inputStatus = "";
-
+      $scope.inputNotes = "";
       $scope.setup();
     };
 
