@@ -37,6 +37,40 @@
           <li><a href="/networkings/new">New Networking</a></li>
         </ul>
         <ul class="right">
+          <li><!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Quick-Add Job</a>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Quick-Add a job listing</h4>
+      <div>
+      Company: <input ng-model="inputCompany">
+      <br>
+      Position: <input ng-model="inputPosition">
+      <br>
+      Source: <input ng-model="inputSource">
+      <br>
+      Notes: <input ng-model="inputNotes">
+      <br>      
+      Status: 
+        <div class="input-field col s12">
+          <select ng-model="inputStatus">
+            <option value="" disabled selected>Select job application status</option>
+            <option value="not_yet_applied">not applied</option>
+            <option value="applying_to">applying</option>
+            <option value="applied_to">applied</option>
+            <option value="interview_set_up">interview set up</option>
+            <option value="interviewed_with">interviewed</option>
+            <option value="job_offered">got job offer</option>
+        </select>
+        </div>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="addJob(inputCompany, inputPosition, inputSource, inputNotes, inputStatus)"> Add listing</a>
+  </div>
+</div> </li>
         <% if current_user %>
          <%= current_user.first_name %>
          <% end %>
