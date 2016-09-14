@@ -1,28 +1,38 @@
 <div ng-app="app">
  <div ng-controller="jobsCtrl" ng-init="setup()">
 
-<h5> Quick-Add a job listing: </h5>
-  <div>
-    Company: <input ng-model="inputCompany">
-    <br>
-    Position: <input ng-model="inputPosition">
-    <br>
-    Source: <input ng-model="inputSource">
-    <br>
-    Status: 
-    <div class="input-field col s12">
-      <select ng-model="inputStatus">
-        <option value="" disabled selected>Select job application status</option>
-        <option value="not_yet_applied">not applied</option>
-        <option value="applying_to">applying</option>
-        <option value="applied_to">applied</option>
-        <option value="interview_set_up">interview set up</option>
-        <option value="interviewed_with">interviewed</option>
-        <option value="job_offered">got job offer</option>
-      </select>
-    </div>
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Quick-Add Job</a>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Quick-Add a job listing</h4>
+      <div>
+      Company: <input ng-model="inputCompany">
+      <br>
+      Position: <input ng-model="inputPosition">
+      <br>
+      Source: <input ng-model="inputSource">
+      <br>
+      Status: 
+        <div class="input-field col s12">
+          <select ng-model="inputStatus">
+            <option value="" disabled selected>Select job application status</option>
+            <option value="not_yet_applied">not applied</option>
+            <option value="applying_to">applying</option>
+            <option value="applied_to">applied</option>
+            <option value="interview_set_up">interview set up</option>
+            <option value="interviewed_with">interviewed</option>
+            <option value="job_offered">got job offer</option>
+        </select>
+        </div>
+      </div>
   </div>
-  <button ng-click="addJob(inputCompany, inputPosition, inputSource, inputStatus)">Add listing</button>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="addJob(inputCompany, inputPosition, inputSource, inputStatus)"> Add listing</a>
+  </div>
+</div> 
 
 <br>
 <br>
@@ -183,6 +193,11 @@
 <script>  
   $(document).ready(function() {
     $('select').material_select();
+  });
+
+  $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
   });
 </script>
 

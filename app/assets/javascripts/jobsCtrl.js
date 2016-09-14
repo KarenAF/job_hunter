@@ -74,6 +74,11 @@
         $scope.jobs.push(response.data);
         console.log(params);
       });
+      $scope.inputCompany = "";
+      $scope.inputPosition = "";
+      $scope.inputSource = "";
+      $scope.inputStatus = "";
+
       $scope.setup();
     };
 
