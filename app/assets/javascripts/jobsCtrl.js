@@ -62,11 +62,12 @@
     };
 
 
-    $scope.addJob = function(inputCompany, inputPosition, inputSource, inputStatus) {
+    $scope.addJob = function(inputCompany, inputPosition, inputSource, inputNotes, inputStatus) {
       var params = {
         company: inputCompany,
         position: inputPosition,
         source: inputSource,
+        notes: inputNotes,
         status: inputStatus
       };
 
