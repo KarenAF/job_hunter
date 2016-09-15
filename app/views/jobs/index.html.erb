@@ -6,7 +6,7 @@
   <br>
   Location: <input ng-model="inputLocation">
   <br>
-  <button ng-click="searchIndeed(inputKeyword, inputLocation)">Search for jobs on Indeed</button>
+  <button ng-click="searchIndeed(inputKeyword, inputLocation)">Search indeed</button>  Results will load in this page
 </div>
 
 <div ng-if="showResults"> 
@@ -14,10 +14,11 @@
     <table>
       <thead>
         <tr>
-            <th data-field="name">Company</th>
-            <th data-field="emailed">Job Title</th>
-            <th data-field="phoned">Location</th>
-            <th data-field="letter_sent">Indeed Jobkey</th>
+            <th data-field="company">Company</th>
+            <th data-field="jobtitle">Job Title</th>
+            <th data-field="location">Location</th>
+            <th data-field="info">More info </th>
+            <th data-field="save_listing">Save</th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +26,8 @@
           <td> {{result.company }} </td>
           <td> {{ result.jobtitle}} </td>
           <td> {{ result.city }}, {{ result.state }} </td>
-          <td> {{ result.jobkey }} </td>
+          <td> <a href="{{result.url}}">More info</a></td>
+          <td> <button ng-click="saveListing(jobkey)">Add to your jobs</button> </td>
         </tr>
       </tbody>
     </table>
