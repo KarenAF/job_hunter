@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'pry-rails'
+# 9-14-16
+
 gem 'indeed-ruby'
 # 9-13-16
 
