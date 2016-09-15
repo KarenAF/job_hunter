@@ -42,6 +42,14 @@
       });
     };
 
+    $scope.searchIndeed = function(inputKeyword, inputLocation){
+      var apiUrl = "api/v1/jobs/search?keyword=" + inputKeyword + "&location=" + inputLocation
+      $http.get(apiUrl).then(function(response) {
+        $scope.searchResults = response.data;
+        $scope.showResults = true;
+      });
+    };
+
     $scope.updateStatus = function(inputJob, inputStatus){
       var updatedJob = inputJob;
       console.log(updatedJob);

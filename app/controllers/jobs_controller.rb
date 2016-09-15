@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   def index
+    require 'indeed-ruby'
     @jobs1 = Job.where(status: "not_yet_applied")
     @jobs2 = Job.where(status: "applying_to")
     @jobs3 = Job.where(status: "applied_to")
