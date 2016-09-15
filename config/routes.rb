@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get '/jobs/:id/edit' => 'jobs#edit'
   patch '/jobs/:id' => 'jobs#update'
 
+  get '/search' => 'jobs#search'
+
   get '/' => 'networkings#index'
   get '/networkings' => 'networkings#index'
   get '/networkings/new' => 'networkings#new'
