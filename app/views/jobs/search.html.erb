@@ -1,12 +1,36 @@
-require 'indeed-ruby'
+<div ng-app="app">
+ <div ng-controller="jobsCtrl" ng-init="setup()">
 
-client = Indeed::Client.new "YOUR_PUBLISHER_NUMBER"
+<br>
+<h5>Search Indeed within Page</h5>
+<div>
+  Keyword: <input ng-model="inputKeyword">
+  <br>
+  Location: <input ng-model="inputLocation">
+  <br>
+  <button ng-click="searchIndeed(inputKeyword, inputLocation)">Load results</button> 
+</div>
 
-params = {
-    :q => 'ruby',
-    :l => 'austin',
-    :userip => '1.2.3.4',
-    :useragent => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2)',
-}
-
-client.search(params)
+<div ng-if="showResults"> 
+  <h3>Indeed Search Results</h3>
+    <table>
+      <thead>
+        <tr>
+            <th data-field="company">Company</th>
+            <th data-field="jobtitle">Job Title</th>
+            <th data-field="location">Location</th>
+            <th data-field="info">More info </th>
+            <th data-field="save_listing">Save</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="result in searchResults"> 
+          <td> {{result.company }} </td>
+          <td> {{ result.jobtitle}} </td>
+          <td> {{ result.city }}, {{ result.state }} </td>
+          <td> <a href="{{result.url}}">More info</a></td>
+          <td> <button ng-click="saveListing(jobkey)">Add to your jobs</button> </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
