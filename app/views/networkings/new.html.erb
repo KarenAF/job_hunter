@@ -1,10 +1,7 @@
-<h1>Add a networking connection </h1>
-<h3> Existing connections: </h3>
-<% @connections.each do |connection| %> 
-<p> <%= connection.first_name %> <%= connection.last_name %> </p>
-<% end %>
-<br>
-</p>
+<div class="row">
+<div class="col s8">
+<h3>Add a networking connection </h3>
+
 <%= form_tag "/networkings", method: :post do  %>
   <div>
     <%= label_tag :first_name, "First name" %>
@@ -47,3 +44,20 @@
 
 
 <a href = "/jobs/"><p> cancel </p></a>
+</div>
+
+<div class="col s2">
+</div>
+
+<div class="col s2">
+
+<h4> Existing connections: </h4>
+<% @connections.each do |connection| %> 
+<p> <%= connection.first_name %> <%= connection.last_name %> </p>
+<% end %>
+<br>
+</p>
+
+</div>
+
+</div>
