@@ -9,16 +9,6 @@ class JobsController < ApplicationController
     @jobs5 = Job.where(status: "interviewed_with")
     @jobs6 = Job.where(status: "job_offered")
 
-    # client = Indeed::Client.new"#{ENV["myIndeedAPIkey"]}"
-    # params = {
-    #     :q => 'ruby',
-    #     :l => 'austin',
-    #     :userip => '1.2.3.4',
-    #     :useragent => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2)',
-    # }
-    # @data = client.search(params)
-    # @results = @data["results"]
-    # @results1 = @results[0]
     @results = indeed_results
     render 'index.html.erb'
   end

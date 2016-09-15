@@ -2,7 +2,16 @@
  <div ng-controller="jobsCtrl" ng-init="setup()">
 
 <h3>Indeed API</h3>
+<div class="row">
 <p> <%= @results %> </p>
+<% @results.each do |result| %>
+<p> Company: <%= result["company"] %> </p>
+<p> Job title: <%= result["jobtitle"] %> </p>
+<p> Location: <%= result["city"] %>, <%= result["state"] %></p>
+<p> jobkey: <%= result["jobkey"] %></p>
+<% end %>
+
+<br>
 
 
     <div id="modal1" class="modal">
