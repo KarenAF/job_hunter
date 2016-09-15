@@ -5,7 +5,7 @@ class NetworkingsController < ApplicationController
 
   def new
     @networking = Networking.new
-    @connections = current_user.networkings
+    @connections = current_user.networkings.order(:first_name)
     render 'new.html.erb'
   end
 
