@@ -2,14 +2,27 @@
  <div ng-controller="jobsCtrl" ng-init="setup()">
 
 <h3>Indeed API</h3>
-<div class="row">
-<p> <%= @results %> </p>
-<% @results.each do |result| %>
-<p> Company: <%= result["company"] %> </p>
-<p> Job title: <%= result["jobtitle"] %> </p>
-<p> Location: <%= result["city"] %>, <%= result["state"] %></p>
-<p> jobkey: <%= result["jobkey"] %></p>
-<% end %>
+<table>
+  <thead>
+    <tr>
+        <th data-field="name">Company</th>
+        <th data-field="emailed">Job Title</th>
+        <th data-field="phoned">Location</th>
+        <th data-field="letter_sent">Indeed Jobkey</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |result| %>
+    <tr> 
+      <td> <%= result["company"] %> </td>
+      <td> <%= result["jobtitle"] %> </td>
+      <td> <%= result["city"] %>, <%= result["state"] %> </td>
+      <td> <%= result["jobkey"] %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <br>
 

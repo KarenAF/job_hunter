@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     client = Indeed::Client.new"#{ENV["myIndeedAPIkey"]}"
     params = {
         :q => 'ruby',
-        :l => 'austin',
+        :l => 'chicago',
         :userip => '1.2.3.4',
         :useragent => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2)',
     }
