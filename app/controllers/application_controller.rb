@@ -12,15 +12,15 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user
   end 
 
-  def indeed_results
-    client = Indeed::Client.new"#{ENV["myIndeedAPIkey"]}"
-    params = {
-        :q => 'ruby',
-        :l => 'chicago',
-        :userip => '1.2.3.4',
-        :useragent => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2)',
-    }
-    @data = client.search(params)
-    @results = @data["results"]
-  end   
+  # def indeed_results
+  #   client = Indeed::Client.new"#{ENV["myIndeedAPIkey"]}"
+  #   params = {
+  #       :q => 'ruby',
+  #       :l => 'chicago',
+  #       :userip => '1.2.3.4',
+  #       :useragent => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2)',
+  #   }
+  #   @data = client.search(params)
+  #   @results = @data["results"]
+  # end   
 end

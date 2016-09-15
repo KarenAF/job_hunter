@@ -39,4 +39,17 @@ class Api::V1::JobsController < ApplicationController
     )
     render 'show.json.jbuilder'
   end
+
+  def indeed_results
+    client = Indeed::Client.new"#{ENV["myIndeedAPIkey"]}"
+    indeed_params = {
+        :q => params[:keyword],
+        :l => params[:location],
+        :userip => '1.2.3.4',
+        :useragent => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2)',
+    }
+    @data = client.search(indeed_params)
+    @results = @data["results"]
+    render json: @results
+  end   
 end

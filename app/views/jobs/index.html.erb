@@ -1,34 +1,35 @@
 <div ng-app="app">
  <div ng-controller="jobsCtrl" ng-init="setup()">
 
-<h3>Indeed Search Results</h3>
-<%= @data %>
-<br>
-<br>
-<%= @results %>
-<table>
-  <thead>
-    <tr>
-        <th data-field="name">Company</th>
-        <th data-field="emailed">Job Title</th>
-        <th data-field="phoned">Location</th>
-        <th data-field="letter_sent">Indeed Jobkey</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @results.each do |result| %>
-    <tr> 
-      <td> <%= result["company"] %> </td>
-      <td> <%= result["jobtitle"] %> </td>
-      <td> <%= result["city"] %>, <%= result["state"] %> </td>
-      <td> <%= result["jobkey"] %> </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div>
+  Keyword: <input ng-model="inputKeyword">
+  <br>
+  Location: <input ng-model="inputLocation">
+  <br>
+  <button ng-click="searchIndeed(inputKeyword, inputLocation)">Search for jobs on Indeed</button>
+</div>
 
-
-<h3>Indeed API Results</h3>
+<div ng-if="showResults"> 
+  <h3>Indeed Search Results</h3>
+    <table>
+      <thead>
+        <tr>
+            <th data-field="name">Company</th>
+            <th data-field="emailed">Job Title</th>
+            <th data-field="phoned">Location</th>
+            <th data-field="letter_sent">Indeed Jobkey</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="result in searchResults"> 
+          <td> {{result.company }} </td>
+          <td> {{ result.jobtitle}} </td>
+          <td> {{ result.city }}, {{ result.state }} </td>
+          <td> {{ result.jobkey }} </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
 
 <br>
 

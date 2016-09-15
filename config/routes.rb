@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :v1 do
     get '/jobs' => 'jobs#index'
     post '/jobs' => 'jobs#create'
+    get '/jobs/search' => 'jobs#indeed_results'
     get '/jobs/:id' => 'jobs#show'
     patch '/jobs/:id' => 'jobs#update'
     end
