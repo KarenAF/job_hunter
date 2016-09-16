@@ -28,8 +28,9 @@
           <td> {{result.company }} </td>
           <td> {{ result.jobtitle}} </td>
           <td> {{ result.city }}, {{ result.state }} </td>
-          <td> <a href="{{result.url}}">More info</a></td>
-          <td> <button ng-click="saveListing(jobkey)">Add to your jobs</button> </td>
+          <td> <a href="{{result.url}}" target="_blank">More info</a></td>
+          <td ng-if="!result.saved"> <button ng-click="saveListing(result)">Add to your jobs</button> </td>
+          <td ng-if="result.saved"> Job Saved </td>        
         </tr>
       </tbody>
     </table>

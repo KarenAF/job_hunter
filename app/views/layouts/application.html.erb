@@ -20,15 +20,26 @@
 
   </head>
   <body>
-    <nav>
-      <div class="nav-wrapper orange">
+    <nav class="my-nav">
+      <div class="nav-wrapper orange my-nav">
         <a href="/" class="brand-logo center">Job Hunter</a>
-        <!-- <%= image_tag "cute_tiger.jpg", class:"tiger" %> -->
+        <%= image_tag "CircleHunterTiger.png", class:"tiger" %>
+
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
-          <li><a href="/jobs/new">New Job</a></li>
-          <li><a href="/networkings">Networking</a></li>
-          <li><a class="waves-effect waves-light btn modal-trigger" href="#modal2">Indeed Search</a></li>
+          <li><a class="waves-effect waves-light btn modal-trigger modal-button" href="#modal2">Indeed Search</a></li>
+          <li>        <!-- Dropdown Structure -->
+              <ul id="dropdown1" class="dropdown-content">
+                <li><a href="/search">Indeed in-page Search</a></li>
+                <li><a href="/jobs/new">New Job- Full</a></li>
+                <li class="divider"></li>
+                <li><a href="/networkings">Networking</a></li>
+              </ul>        
+              <ul class="right hide-on-med-and-down">
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">More<i class="material-icons right">arrow_drop_down</i></a></li>
+              </ul>
+       <!--    End -->
+          </li>
 
         </ul>
         <ul class="side-nav" id="mobile-demo">
@@ -36,6 +47,7 @@
           <li><a href="/jobs/new">New Job</a></li>
           <li><a href="/networkings">Networking</a></li>
           <li><a href="/networkings/new">New Networking</a></li>
+          <li><a href="/search">Indeed in-page search</a></li>
           <li><a class="waves-effect waves-light btn modal-trigger" href="#modal2">Indeed Search</a></li>
           
         </ul>
@@ -68,12 +80,16 @@
         </div>
         <% end %>
 
-      <%= yield %>
+      <div >
+        <%= yield %>
+      </div>
     </div>
  <script> 
   $( document ).ready(function(){
     $(".button-collapse").sideNav(); 
   });
+
+  $(".dropdown-button").dropdown();
 
  </script> 
 

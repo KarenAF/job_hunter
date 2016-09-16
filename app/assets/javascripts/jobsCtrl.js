@@ -43,12 +43,29 @@
     };
 
     $scope.searchIndeed = function(inputKeyword, inputLocation){
-      var apiUrl = "api/v1/jobs/search?keyword=" + inputKeyword + "&location=" + inputLocation
+      var apiUrl = "api/v1/jobs/search?keyword=" + inputKeyword + "&location=" + inputLocation;
       $http.get(apiUrl).then(function(response) {
         $scope.searchResults = response.data;
         $scope.showResults = true;
       });
     };
+
+    $scope.saveListing = function(result){
+      var params = {
+        company: result.company,
+        position: result.jobtitle,
+        source: "Indeed",
+        city: result.city,
+        state: result.state,
+        listing_url: result.url,
+        status: "not_yet_applied",
+        notes: result.date,
+      };
+      $http.post("/api/v1/jobs", params).then(function(response){
+        console.log("NEW INDEED JOB SAVED")
+        result.saved = true;
+      }) ;
+    }
 
     $scope.updateStatus = function(inputJob, inputStatus){
       var updatedJob = inputJob;

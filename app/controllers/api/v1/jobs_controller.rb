@@ -22,7 +22,12 @@ class Api::V1::JobsController < ApplicationController
       company: params[:company],
       position: params[:position],
       source: params[:source],
+      city: params[:city],
+      state: params[:state],
+      listing_url: params[:listing_url],
+      notes: params[:notes],
       status: params[:status],
+      found_date: DateTime.now
     )
     @job.save
     @jobs = Job.all
