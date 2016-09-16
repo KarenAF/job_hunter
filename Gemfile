@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'google-webfonts-rails'
+# 9/15/16
+
 gem 'pry-rails'
 # 9-14-16
 

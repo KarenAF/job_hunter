@@ -1,20 +1,22 @@
 .tiger {
-  width: 9%;
+  width: 120px;
   height: 100%;
+  margin-left: 90px;
 }
 
 .ng-enter, .ng-move{
-  -webkit-animation: fadeIn 2s;
-  -moz-animation: fadeIn 2s;
-  -o-animation: fadeIn 2s;
-  animation: fadeIn 2.5s;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  animation: fadeIn 1s;
 }
 
 .ng-leave{
-  -webkit-animation: fadeOut 1s;
-  -moz-animation: fadeOut 1s;
-  -o-animation: fadeOut 1s;
-  animation: fadeOut 1s;
+  
+}
+
+.round-card {
+  border-radius: 40px !important;
 }
 
 .modal-content {
@@ -33,4 +35,32 @@
 
 .btn   {
   background-color: #8ca9e5 !important;
+}
+
+button {
+  background-color: #8ca9e5 !important;
+  color: white !important;
+}
+
+body {
+  background-image: url('/assets/small_steps.png');
+  height: 100%;
+  width: 100%;
+  font-family: 'Gudea', sans-serif;
+}
+
+.dropdown-content {
+  min-width: 190px !important;
+  margin-top: 50px !important;
+}
+
+.cool-border {
+  border-radius: 40px !important;
+  border: 5px solid #8ca9e5 !important;
+}
+
+.brand-logo {
+  margin-top: 21px;
+  font-family: 'Tillana', cursive;
+  font-size: 49px !important;
 }
