@@ -1,6 +1,6 @@
 .tiger {
-  width: 7%;
-  height: 7%;
+  width: 9%;
+  height: 100%;
 }
 
 .ng-enter, .ng-move{
@@ -19,4 +19,18 @@
 
 .modal-content {
   color: black;
+}
+
+.my-nav {
+  height: 110px !important;
+}
+
+.newjobbox {
+  color: black;
+  border: 5px solid #8ca9e5;
+  padding: 10px;
+}
+
+.btn   {
+  background-color: #8ca9e5 !important;
 }
