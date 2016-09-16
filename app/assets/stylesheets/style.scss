@@ -64,3 +64,11 @@ body {
   font-family: 'Tillana', cursive;
   font-size: 49px !important;
 }
+
+#tiger-image {
+  img {
+    max-width: 400px;
+    position: fixed;
+  }
+  float: right;
+}

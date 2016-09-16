@@ -1,5 +1,7 @@
-<h1>Add a skill to this job listing </h1>
-<p> Existing skills: 
+<h4>Add a skill to this job listing </h4>
+
+<div class="card-panel cool-border">
+<p> Desired Skills:
 <br>
 <% @skills_for_this_job.each do |skill| %>
   <%= skill.name %>
@@ -25,3 +27,4 @@
 </div>
 
 <a href = "/jobs/"><p> cancel </p></a>
+</div>
