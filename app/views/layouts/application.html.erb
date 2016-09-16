@@ -9,6 +9,8 @@
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= csrf_meta_tags %>
 
+    <link href="https://fonts.googleapis.com/css?family=Gudea|Playfair+Display+SC:900i|Tillana:800" rel="stylesheet">
+
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 
@@ -18,11 +20,12 @@
 
     <!-- Your app -->
 
+
   </head>
   <body>
     <nav class="my-nav">
       <div class="nav-wrapper orange my-nav">
-        <a href="/" class="brand-logo center">Job Hunter</a>
+        <a href="/" class="brand-logo center">JobHunter</a>
         <%= image_tag "CircleHunterTiger.png", class:"tiger" %>
 
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -80,7 +83,7 @@
         </div>
         <% end %>
 
-      <div >
+      <div id="wallpaper">
         <%= yield %>
       </div>
     </div>
