@@ -10,6 +10,11 @@ class JobsController < ApplicationController
     render 'index.html.erb'
   end
 
+  def spreadsheet
+    @jobs = Job.all
+    render 'spreadsheet.html.erb'
+  end
+
   def new
     @job = Job.new
     render 'new.html.erb'
