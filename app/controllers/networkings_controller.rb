@@ -29,7 +29,11 @@ class NetworkingsController < ApplicationController
 
   def show
     @networking = Networking.find_by(id: params[:id])
-    @job = @networking.job
+    if @networking.job
+      @company = @networking.job
+    else
+      @company = "none"
+    end
     render 'show.html.erb'
   end
 
