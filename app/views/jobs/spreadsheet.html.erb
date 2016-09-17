@@ -1,29 +1,48 @@
 <div ng-app="app">
  <div ng-controller="jobsCtrl" ng-init="setup()">
+  <h4>Jobs Spreadsheet View</h4>
+  <p> Number of job listings: {{jobs.length}} </p>
+    <div>
+      <button ng-click="setOrderAttribute('company')">Order by Company</button>
+      <button ng-click="setOrderAttribute('position')">Order by Position</button>
+    </div>
 
-<h4>Jobs</h4>
+    <div>
+      <label> filter company: </label>
+      <input ng-model="jobFilter" list="companies">
 
-<div class="card-panel cool-border">
-  <table>
-    <thead>
-      <tr>
-          <th data-field="company">Company</th>
-          <th data-field="position">Position</th>
-          <th data-field="source">Source</th>
-          <th data-field="status">Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="job in jobs">
-        <td><a href="/jobs/{{job.id}}"> {{job.company}} {{ job.last_name }} </a></td>
-        <td>{{job.position }}</td>
-        <td>{{job.source }}</td>
-        <td>{{job.status }}</td>
-      </tr>
-    </tbody>
-  </table>
+      <datalist id='companies'>
+        <option ng-repeat="job in jobs"> {{job.company}}</option>
+      </datalist>
+    </div>
+
+<br>
+<br>
+
+    <div class="card-panel cool-border">
+      <table>
+        <thead>
+          <tr>
+              <th><button ng-click="setOrderAttribute('company')">Company.. {{ direction }} </button></th>
+              <th><button ng-click="setOrderAttribute('position')">position.. {{ direction }} </button></th>
+              <th><button ng-click="setOrderAttribute('source')">source.. {{ direction }} </button></th>
+              <th><button ng-click="setOrderAttribute('status')">Company.. {{ direction }} </button></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="job in jobs | filter:{company: jobFilter} | orderBy:orderAttribute:isOrderDescending">
+            <td><a href="/jobs/{{job.id}}"> {{job.company}} {{ job.last_name }} </a></td>
+            <td>{{job.position }}</td>
+            <td>{{job.source }}</td>
+            <td>{{job.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h5> <a href="/jobs/new"> New job connection </a></h5>
+
+    <a href = "/jobs/"><p> cancel </p></a>
+
+  </div>
 </div>
-
-<h5> <a href="/jobs/new"> New job connection </a></h5>
-
-<a href = "/jobs/"><p> cancel </p></a>
