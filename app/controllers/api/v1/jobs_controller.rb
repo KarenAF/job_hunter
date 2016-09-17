@@ -12,6 +12,8 @@ class Api::V1::JobsController < ApplicationController
     render 'index.json.jbuilder'
   end
 
+
+  
   def show
     @job = Job.find_by(id: params['id'])
     render 'show.json.jbuilder'
