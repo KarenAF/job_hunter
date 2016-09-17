@@ -1,6 +1,6 @@
 class NetworkingsController < ApplicationController
   def index
-    @networkings = Networking.all.sort
+    @networkings = Networking.all
   end
 
   def new
@@ -30,8 +30,8 @@ class NetworkingsController < ApplicationController
   def show
     @networking = Networking.find_by(id: params[:id])
     if @networking.job
-      @company = @networking.job
-    else
+      @company = @networking.job.company
+    else 
       @company = "none"
     end
     render 'show.html.erb'
