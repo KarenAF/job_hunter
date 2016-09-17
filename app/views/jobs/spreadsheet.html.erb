@@ -2,22 +2,21 @@
  <div ng-controller="jobsCtrl" ng-init="setup()">
   <h4>Jobs Spreadsheet View</h4>
   <p> Number of job listings: {{jobs.length}} </p>
-    <div>
-      <button ng-click="setOrderAttribute('company')">Order by Company</button>
-      <button ng-click="setOrderAttribute('position')">Order by Position</button>
-    </div>
-
-    <div>
+    <div class="narrow-row">
       <label> filter company: </label>
       <input ng-model="jobFilter" list="companies">
-
       <datalist id='companies'>
         <option ng-repeat="job in jobs"> {{job.company}}</option>
       </datalist>
-    </div>
+    </div class="narrow-row">
 
-<br>
-<br>
+    <div>
+      <label> filter position: </label>
+      <input ng-model="positionFilter" list="positions">
+      <datalist id='positions'>
+        <option ng-repeat="job in jobs"> {{job.position}}</option>
+      </datalist>
+    </div>
 
     <div class="card-panel cool-border">
       <table>
@@ -30,7 +29,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="job in jobs | filter:{company: jobFilter} | orderBy:orderAttribute:isOrderDescending">
+          <tr ng-repeat="job in jobs | filter:{company: jobFilter} | filter:{position: positionFilter} | orderBy:orderAttribute:isOrderDescending">
             <td><a href="/jobs/{{job.id}}"> {{job.company}} {{ job.last_name }} </a></td>
             <td>{{job.position }}</td>
             <td>{{job.source }}</td>
