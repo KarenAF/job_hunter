@@ -50,7 +50,7 @@ body {
 }
 
 .dropdown-content {
-  min-width: 190px !important;
+  min-width: 260px !important;
   margin-top: 50px !important;
 }
 
@@ -71,4 +71,8 @@ body {
     position: fixed;
   }
   float: right;
+}
+
+.narrow-row {
+  line-height: 27%;
 }
