@@ -39,7 +39,7 @@
   <div class="row narrow-row card-panel orange lighten-4" ng-repeat="job in notYetAppliedJobs | orderBy: 'updated_at' : true">
     <div class="row">
       <div class="col s2">Company</div>
-      <div class="col s5">{{job.company}}</div>
+      <div class="col s5"><a href="/jobs/{{job.id}}"> {{job.company}} </a></div>
     </div>
     <div class="row">
       <div class="col s2">Position</div>
@@ -55,7 +55,6 @@
         </select>
     </div>
     <button ng-click="updateStatus(job, updatedStatus[$index])">Update Status</button>
-    <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>
 
@@ -64,7 +63,7 @@
   <div class="row narrow-row card-panel yellow lighten-4" ng-repeat="job in applyingJobs | orderBy: 'updated_at' : true">
     <div class="row">
       <div class="col s2">Company</div>
-      <div class="col s5">{{job.company}}</div>
+      <div class="col s5"><a href="/jobs/{{job.id}}"> {{job.company}} </a></div>
     </div>
     <div class="row">
       <div class="col s2">Position</div>
@@ -80,7 +79,6 @@
         </select>
     </div>
     <button ng-click="updateStatus(job, updatedStatus[$index])">Update Status</button> 
-    <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>
 
@@ -90,7 +88,7 @@
   <div class="row narrow-row card-panel light-green lighten-4" ng-repeat="job in appliedJobs | orderBy: 'updated_at' : true">
     <div class="row">
       <div class="col s2">Company</div>
-      <div class="col s5">{{job.company}}</div>
+      <div class="col s5"><a href="/jobs/{{job.id}}"> {{job.company}} </a></div>
     </div>
     <div class="row">
       <div class="col s2">Position</div>
@@ -106,7 +104,6 @@
         </select>
     </div>
     <button ng-click="updateStatus(job, updatedStatus[$index])">Update Status</button>       
-    <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>
 
@@ -115,7 +112,7 @@
   <div class="row narrow-row card-panel teal lighten-4" ng-repeat="job in interviewSetupJobs | orderBy: 'updated_at' : true">
     <div class="row">
       <div class="col s2">Company</div>
-      <div class="col s5">{{job.company}}</div>
+      <div class="col s5"><a href="/jobs/{{job.id}}"> {{job.company}} </a></div>
     </div>
     <div class="row">
       <div class="col s2">Position</div>
@@ -131,7 +128,6 @@
         </select>
     </div>
     <button ng-click="updateStatus(job, updatedStatus[$index])">Update Status</button>
-    <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>
 
@@ -141,7 +137,7 @@
   <div class="row narrow-row card-panel indigo lighten-4" ng-repeat="job in interviewedJobs | orderBy: 'updated_at' : true">
     <div class="row">
       <div class="col s2">Company</div>
-      <div class="col s5">{{job.company}}</div>
+      <div class="col s5"><a href="/jobs/{{job.id}}"> {{job.company}} </a></div>
     </div>
     <div class="row">
       <div class="col s2">Position</div>
@@ -157,7 +153,6 @@
         </select>
     </div>
     <button ng-click="updateStatus(job, updatedStatus[$index])">Update Status</button>
-    <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>
 
@@ -166,7 +161,7 @@
   <div class="row narrow-row card-panel deep-purple lighten-4" ng-repeat="job in offeredJobs | orderBy: 'updated_at' : true">
     <div class="row">
       <div class="col s2">Company</div>
-      <div class="col s5">{{job.company}}</div>
+      <div class="col s5"><a href="/jobs/{{job.id}}"> {{job.company}} </a></div>
     </div>
     <div class="row">
       <div class="col s2">Position</div>
@@ -182,7 +177,6 @@
         </select>
     </div>
     <button ng-click="updateStatus(job, updatedStatus[$index])">Update Status</button> 
-    <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>
 </div>
