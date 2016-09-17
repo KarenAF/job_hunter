@@ -1,5 +1,6 @@
-<h1>Edit Networking Connection:</h1>
+<h4>Edit Networking Connection:</h4>
 
+<div class="row card-panel cool-border">
 <%= form_tag "/networkings/#{@networking.id}", method: :patch do %>
   <div class = "form-group">
     <%= label_tag :first_name %>
@@ -43,3 +44,4 @@
 <a href = "/networkings/<%= @networking.id %>"><p> cancel </p></a>
 <a href="/networkings">Back to all networking connections</a>
 <% end %>
+</div>
