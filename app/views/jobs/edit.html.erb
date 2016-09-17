@@ -1,6 +1,7 @@
 <h3> <%= @job.company %>, <%= @job.position %> </h3>
-<h1> Edit job listing details: </h1>
+<h4> Edit job listing details: </h4>
 
+<div class="card-panel cool-border">
 <%= form_tag "/jobs/#{@job.id}", method: :patch do %>
   <div class = "form-group">
     <%= label_tag :company %>
@@ -82,3 +83,5 @@
 <h5> <a href="/jobs/<%= @job.id %>"> Cancel </a></h5>
 
 <h5> <a href="/jobs"> Back to all jobs </a></h5>
+
+</div>
