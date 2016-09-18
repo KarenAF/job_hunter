@@ -35,7 +35,11 @@
             <td>{{job.position }}</td>
             <td>{{job.source }}</td>
             <td>{{job.status }}</td>
-            <td ng-repeat="skill in job.skills">{{skill.name }}</td>
+            <td>
+              <span ng-repeat="skill in job.skills"
+                    {{skill.name + ($last ? ", ") }}>
+              </span>
+            </td>
           </tr>
         </tbody>
       </table>
