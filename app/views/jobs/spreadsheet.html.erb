@@ -35,11 +35,10 @@
             <td>{{job.position }}</td>
             <td>{{job.source }}</td>
             <td>{{job.status }}</td>
-            <td>
-              <span ng-repeat="skill in job.skills"
-                    {{skill.name + ($last ? ", ") }}>
-              </span>
-            </td>
+         <!--    <td ng-repeat="skill in job.jobskills">{{jskill.name }}
+            </td> -->
+            <td ng-repeat="cat in cats">{{cat.name}}  
+            </td>            
           </tr>
         </tbody>
       </table>
