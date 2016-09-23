@@ -26,6 +26,7 @@
 
         console.log("hello");
 
+
         for(var i = 0; i < $scope.jobs.length; i++){
           if ($scope.jobs[i].status == "not_yet_applied"){
             $scope.notYetAppliedJobs.push($scope.jobs[i]);
@@ -46,6 +47,12 @@
             $scope.offeredJobs.push($scope.jobs[i]);
           }                                                  
         };
+
+        $scope.skillsArray = [];
+
+        for(var i = 0; i < $scope.jobs.length; i++){
+            $scope.skillsArray.push($scope.jobs[i].jobskills);
+          };                                                  
       });
     };
 

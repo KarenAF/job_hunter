@@ -1,5 +1,6 @@
 <div ng-app="app">
  <div ng-controller="jobsCtrl" ng-init="setup()">
+ <p> {{skillsArray}} </p>
   <h4>Jobs Spreadsheet View</h4>
   <p> Number of job listings: {{jobs.length}} </p>
     <div class="narrow-row">
@@ -35,10 +36,7 @@
             <td>{{job.position }}</td>
             <td>{{job.source }}</td>
             <td>{{job.status }}</td>
-         <!--    <td ng-repeat="skill in job.jobskills">{{jskill.name }}
-            </td> -->
-            <td ng-repeat="cat in cats">{{cat.name}}  
-            </td>            
+            <td> {{job.skills }} </td>           
           </tr>
         </tbody>
       </table>
