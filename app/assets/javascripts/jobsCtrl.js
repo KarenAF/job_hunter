@@ -16,12 +16,6 @@
 
         $scope.updatedStatus = [];
 
-        $scope.cats = [
-        { name: "A"},
-        { name: "B"},
-        { name: "C"}
-        ];
-
         $scope.statuses = ["not_yet_applied", "applying_to", "applied_to", "interview_set_up", "interviewed_with", "job_offered"];
 
         console.log("hello");
@@ -46,13 +40,7 @@
           else if ($scope.jobs[i].status == "job_offered"){
             $scope.offeredJobs.push($scope.jobs[i]);
           }                                                  
-        };
-
-        $scope.skillsArray = [];
-
-        for(var i = 0; i < $scope.jobs.length; i++){
-            $scope.skillsArray.push($scope.jobs[i].jobskills);
-          };                                                  
+        };                                                 
       });
     };
 
