@@ -12,6 +12,11 @@ class Api::V1::JobsController < ApplicationController
     render 'index.json.jbuilder'
   end
 
+  def spreadsheet
+    @jobs = Job.all
+    render 'index.json.jbuilder'
+  end
+
 
   
   def show

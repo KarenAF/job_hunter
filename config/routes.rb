@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get '/jobs/search' => 'jobs#indeed_results'
     get '/jobs/:id' => 'jobs#show'
     patch '/jobs/:id' => 'jobs#update'
+    get 'jobs/spreadsheet' => 'jobs#spreadsheet'
     end
   end
 

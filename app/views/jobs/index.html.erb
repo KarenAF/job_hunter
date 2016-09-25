@@ -39,24 +39,19 @@
   <div class="row narrow-row card-panel orange lighten-4" ng-repeat="job in notYetAppliedJobs | orderBy: 'updated_at' : true">
     <div class="row">
       <div class="col s2">Company</div>
-      <div class="col s5">{{job.company}}</div>
+      <div class="col s5"><a href="/jobs/{{job.id}}"> {{job.company}} </a></div>
     </div>
     <div class="row">
       <div class="col s2">Position</div>
       <div class="col s5">{{job.position}}</div>
-    </div>
-    <div class="row">
-      <div class="col s2">Status</div>
-      <div class="col s5">{{job.status}}</div>   
     </div> 
     <div input-field>
         <select ng-options="status as status for status in statuses" ng-model="updatedStatus[$index]" material-select watch>
-        <option value="" disabled selected>Change application status</option>
+        <option value="" disabled selected>{{job.status}}</option>
         </select>
     </div>
-    <button ng-click="updateStatus(job, updatedStatus[$index])">Update Status</button>
-    <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
-  </div>  
+    <button ng-click="updateStatus(job, updatedStatus[$index])">Update Status</button> 
+  </div>   
 </div>
 
 <div class="row card-panel yellow round-card">
@@ -64,23 +59,18 @@
   <div class="row narrow-row card-panel yellow lighten-4" ng-repeat="job in applyingJobs | orderBy: 'updated_at' : true">
     <div class="row">
       <div class="col s2">Company</div>
-      <div class="col s5">{{job.company}}</div>
+      <div class="col s5"><a href="/jobs/{{job.id}}"> {{job.company}} </a></div>
     </div>
     <div class="row">
       <div class="col s2">Position</div>
       <div class="col s5">{{job.position}}</div>
-    </div>
-    <div class="row">
-      <div class="col s2">Status</div>
-      <div class="col s5">{{job.status}}</div>
     </div> 
     <div input-field>
         <select ng-options="status as status for status in statuses" ng-model="updatedStatus[$index]" material-select watch>
-        <option value="" disabled selected>Change application status</option>
+        <option value="" disabled selected>{{job.status}}</option>
         </select>
     </div>
     <button ng-click="updateStatus(job, updatedStatus[$index])">Update Status</button> 
-    <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>
 
@@ -90,23 +80,18 @@
   <div class="row narrow-row card-panel light-green lighten-4" ng-repeat="job in appliedJobs | orderBy: 'updated_at' : true">
     <div class="row">
       <div class="col s2">Company</div>
-      <div class="col s5">{{job.company}}</div>
+      <div class="col s5"><a href="/jobs/{{job.id}}"> {{job.company}} </a></div>
     </div>
     <div class="row">
       <div class="col s2">Position</div>
       <div class="col s5">{{job.position}}</div>
     </div>
-    <div class="row">
-      <div class="col s2">Status</div>
-      <div class="col s5">{{job.status}}</div>
-    </div>
     <div input-field>
         <select ng-options="status as status for status in statuses" ng-model="updatedStatus[$index]" material-select watch>
-        <option value="" disabled selected>Change application status</option>
+        <option value="" disabled selected>{{job.status}}</option>
         </select>
     </div>
     <button ng-click="updateStatus(job, updatedStatus[$index])">Update Status</button>       
-    <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>
 
@@ -115,23 +100,18 @@
   <div class="row narrow-row card-panel teal lighten-4" ng-repeat="job in interviewSetupJobs | orderBy: 'updated_at' : true">
     <div class="row">
       <div class="col s2">Company</div>
-      <div class="col s5">{{job.company}}</div>
+      <div class="col s5"><a href="/jobs/{{job.id}}"> {{job.company}} </a></div>
     </div>
     <div class="row">
       <div class="col s2">Position</div>
       <div class="col s5">{{job.position}}</div>
     </div>
-    <div class="row">
-      <div class="col s2">Status</div>
-      <div class="col s5">{{job.status}}</div>
-    </div>
     <div input-field>
         <select ng-options="status as status for status in statuses" ng-model="updatedStatus[$index]" material-select watch>
-        <option value="" disabled selected>Change application status</option>
+        <option value="" disabled selected>{{job.status}}</option>
         </select>
     </div>
     <button ng-click="updateStatus(job, updatedStatus[$index])">Update Status</button>
-    <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>
 
@@ -141,23 +121,18 @@
   <div class="row narrow-row card-panel indigo lighten-4" ng-repeat="job in interviewedJobs | orderBy: 'updated_at' : true">
     <div class="row">
       <div class="col s2">Company</div>
-      <div class="col s5">{{job.company}}</div>
+      <div class="col s5"><a href="/jobs/{{job.id}}"> {{job.company}} </a></div>
     </div>
     <div class="row">
       <div class="col s2">Position</div>
       <div class="col s5">{{job.position}}</div>
     </div>
-    <div class="row">
-      <div class="col s2">Status</div>
-      <div class="col s5">{{job.status}}</div>
-    </div>
     <div input-field>
         <select ng-options="status as status for status in statuses" ng-model="updatedStatus[$index]" material-select watch>
-        <option value="" disabled selected>Change application status</option>
+        <option value="" disabled selected>{{job.status}}</option>
         </select>
     </div>
     <button ng-click="updateStatus(job, updatedStatus[$index])">Update Status</button>
-    <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>
 
@@ -166,23 +141,18 @@
   <div class="row narrow-row card-panel deep-purple lighten-4" ng-repeat="job in offeredJobs | orderBy: 'updated_at' : true">
     <div class="row">
       <div class="col s2">Company</div>
-      <div class="col s5">{{job.company}}</div>
+      <div class="col s5"><a href="/jobs/{{job.id}}"> {{job.company}} </a></div>
     </div>
     <div class="row">
       <div class="col s2">Position</div>
       <div class="col s5">{{job.position}}</div>
-    </div>
-    <div class="row">
-      <div class="col s2">Status</div>
-      <div class="col s5">{{job.status}}</div>
     </div> 
     <div input-field>
         <select ng-options="status as status for status in statuses" ng-model="updatedStatus[$index]" material-select watch>
-        <option value="" disabled selected>Change application status</option>
+        <option value="" disabled selected>{{job.status}}</option>
         </select>
     </div>
     <button ng-click="updateStatus(job, updatedStatus[$index])">Update Status</button> 
-    <p> <a href="/jobs/{{job.id}}">See listing details </a> </p>
   </div>  
 </div>
 </div>

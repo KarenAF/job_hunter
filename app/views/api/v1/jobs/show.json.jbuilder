@@ -21,3 +21,4 @@ json.rating @job.rating
 json.notes @job.notes
 json.user_id @job.user_id
 json.updated_at @job.updated_at
+json.skills @job.skills
