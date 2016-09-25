@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'rails_12factor', group: :production
+# 9/25/16
+
 gem 'google-webfonts-rails'
 # 9/15/16
 
