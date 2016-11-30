@@ -12,11 +12,12 @@
         $scope.appliedJobs = [];
         $scope.interviewSetupJobs = [];
         $scope.interviewedJobs = [];
+        $scope.noOfferJobs = [];
         $scope.offeredJobs = [];
 
         $scope.updatedStatus = [];
 
-        $scope.statuses = ["not_yet_applied", "applying_to", "applied_to", "interview_set_up", "interviewed_with", "job_offered"];
+        $scope.statuses = ["not_yet_applied", "applying_to", "applied_to", "interview_set_up", "interviewed_with", "job_offered", "no_offer"];
 
         console.log("hello");
 
@@ -38,7 +39,10 @@
             $scope.interviewedJobs.push($scope.jobs[i]);
           }
           else if ($scope.jobs[i].status == "job_offered"){
-            $scope.offeredJobs.push($scope.jobs[i]);
+            $scope.offeredJobs.push($scope.jobs[i]);  
+          }
+          else if ($scope.jobs[i].status == "no_offer"){
+            $scope.noOfferJobs.push($scope.jobs[i]);
           }                                                  
         };                                                 
       });
